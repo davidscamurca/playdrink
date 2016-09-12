@@ -97,6 +97,9 @@
 		39BAD9A81D8358E800B2524B /* Play Drink */ = {
 			isa = PBXGroup;
 			children = (
+				A0A474C91D87598B004B8DA8 /* Controller */,
+				A0A474C81D875978004B8DA8 /* View */,
+				A0A474C71D87596A004B8DA8 /* Model */,
 				39BAD9A91D8358E800B2524B /* AppDelegate.swift */,
 				39BAD9AB1D8358E800B2524B /* ViewController.swift */,
 				39BAD9AD1D8358E800B2524B /* Main.storyboard */,
@@ -123,6 +126,27 @@
 				39BAD9CB1D8358E800B2524B /* Info.plist */,
 			);
 			path = "Play DrinkUITests";
+			sourceTree = "<group>";
+		};
+		A0A474C71D87596A004B8DA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A0A474C81D875978004B8DA8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A0A474C91D87598B004B8DA8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -482,6 +506,7 @@
 				39BAD9D01D8358E800B2524B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		39BAD9D11D8358E800B2524B /* Build configuration list for PBXNativeTarget "Play DrinkTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +515,7 @@
 				39BAD9D31D8358E800B2524B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		39BAD9D41D8358E800B2524B /* Build configuration list for PBXNativeTarget "Play DrinkUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +524,7 @@
 				39BAD9D61D8358E800B2524B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
