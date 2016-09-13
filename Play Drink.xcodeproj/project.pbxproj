@@ -14,6 +14,9 @@
 		39BAD9B41D8358E800B2524B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39BAD9B21D8358E800B2524B /* LaunchScreen.storyboard */; };
 		39BAD9BF1D8358E800B2524B /* Play_DrinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BAD9BE1D8358E800B2524B /* Play_DrinkTests.swift */; };
 		39BAD9CA1D8358E800B2524B /* Play_DrinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BAD9C91D8358E800B2524B /* Play_DrinkUITests.swift */; };
+		A0A474CB1D875A6E004B8DA8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A474CA1D875A6E004B8DA8 /* MenuViewController.swift */; };
+		A0A474CD1D887CFC004B8DA8 /* BeforeGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A474CC1D887CFC004B8DA8 /* BeforeGameViewController.swift */; };
+		A0A474CF1D887E49004B8DA8 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A474CE1D887E49004B8DA8 /* CardsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		39BAD9C51D8358E800B2524B /* Play DrinkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Play DrinkUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39BAD9C91D8358E800B2524B /* Play_DrinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Play_DrinkUITests.swift; sourceTree = "<group>"; };
 		39BAD9CB1D8358E800B2524B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0A474CA1D875A6E004B8DA8 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		A0A474CC1D887CFC004B8DA8 /* BeforeGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeGameViewController.swift; sourceTree = "<group>"; };
+		A0A474CE1D887E49004B8DA8 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +151,9 @@
 		A0A474C91D87598B004B8DA8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A0A474CA1D875A6E004B8DA8 /* MenuViewController.swift */,
+				A0A474CC1D887CFC004B8DA8 /* BeforeGameViewController.swift */,
+				A0A474CE1D887E49004B8DA8 /* CardsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -281,6 +290,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				39BAD9AC1D8358E800B2524B /* ViewController.swift in Sources */,
+				A0A474CD1D887CFC004B8DA8 /* BeforeGameViewController.swift in Sources */,
+				A0A474CF1D887E49004B8DA8 /* CardsViewController.swift in Sources */,
+				A0A474CB1D875A6E004B8DA8 /* MenuViewController.swift in Sources */,
 				39BAD9AA1D8358E800B2524B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IZo-en-LNg">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Play_Drink" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MenuViewController" customModule="Play_Drink" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,12 +16,123 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mjx-gi-aTb">
+                                <rect key="frame" x="139" y="413" width="96" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="96" id="Ovx-Dc-Iiu"/>
+                                </constraints>
+                                <state key="normal" title="Play game"/>
+                                <connections>
+                                    <segue destination="Xzm-Fm-2nQ" kind="show" id="MRq-An-WB6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ia8-MB-uxq">
+                                <rect key="frame" x="139" y="467" width="96" height="30"/>
+                                <state key="normal" title="Cards"/>
+                                <connections>
+                                    <segue destination="BrO-d0-Vv5" kind="show" id="3Wy-ul-oc6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DR6-jR-Drk">
+                                <rect key="frame" x="139" y="520" width="96" height="30"/>
+                                <state key="normal" title="Rules"/>
+                                <connections>
+                                    <segue destination="bT1-kC-8Nk" kind="show" id="t2I-aJ-cQT"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Mjx-gi-aTb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bhc-Lj-4Gz"/>
+                            <constraint firstItem="ia8-MB-uxq" firstAttribute="leading" secondItem="DR6-jR-Drk" secondAttribute="leading" id="HT9-pb-vhO"/>
+                            <constraint firstItem="Mjx-gi-aTb" firstAttribute="leading" secondItem="ia8-MB-uxq" secondAttribute="leading" id="LTe-2E-ocp"/>
+                            <constraint firstItem="ia8-MB-uxq" firstAttribute="top" secondItem="Mjx-gi-aTb" secondAttribute="bottom" constant="24" id="NCH-V4-SXD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DR6-jR-Drk" secondAttribute="bottom" constant="117" id="Owo-CT-Xto"/>
+                            <constraint firstItem="DR6-jR-Drk" firstAttribute="top" secondItem="ia8-MB-uxq" secondAttribute="bottom" constant="23" id="SGF-mD-9ig"/>
+                            <constraint firstItem="Mjx-gi-aTb" firstAttribute="trailing" secondItem="ia8-MB-uxq" secondAttribute="trailing" id="pEI-Rh-IAO"/>
+                            <constraint firstItem="ia8-MB-uxq" firstAttribute="trailing" secondItem="DR6-jR-Drk" secondAttribute="trailing" id="zqa-lP-WTB"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="FpG-oL-4Kb"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="961.5" y="437.5"/>
+        </scene>
+        <!--Cards View Controller-->
+        <scene sceneID="Nl6-js-ips">
+            <objects>
+                <viewController id="BrO-d0-Vv5" customClass="CardsViewController" customModule="Play_Drink" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c2W-6N-aBu"/>
+                        <viewControllerLayoutGuide type="bottom" id="ekp-Kg-Dsn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AL8-Px-V6P">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xIL-Gk-BF1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1542.5" y="437.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ncU-kY-qws">
+            <objects>
+                <viewController id="bT1-kC-8Nk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lAc-07-ies"/>
+                        <viewControllerLayoutGuide type="bottom" id="9l1-8I-fOa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="30h-1G-dRz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WUR-5J-mFP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1542.5" y="1335.5"/>
+        </scene>
+        <!--Before Game View Controller-->
+        <scene sceneID="Iy3-h7-yXK">
+            <objects>
+                <viewController id="Xzm-Fm-2nQ" customClass="BeforeGameViewController" customModule="Play_Drink" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mLZ-O0-LFh"/>
+                        <viewControllerLayoutGuide type="bottom" id="SnA-Om-oeS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1lO-sI-ANO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7d2-Mg-jYx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1542.5" y="-374.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cBB-Qm-dzp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IZo-en-LNg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BpF-nJ-20r">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="QMQ-97-yTZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aCW-H4-a47" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="444" y="438"/>
         </scene>
     </scenes>
 </document>
