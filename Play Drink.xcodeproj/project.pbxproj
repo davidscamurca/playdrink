@@ -17,6 +17,7 @@
 		A0A474CB1D875A6E004B8DA8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A474CA1D875A6E004B8DA8 /* MenuViewController.swift */; };
 		A0A474CD1D887CFC004B8DA8 /* BeforeGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A474CC1D887CFC004B8DA8 /* BeforeGameViewController.swift */; };
 		A0A474CF1D887E49004B8DA8 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A474CE1D887E49004B8DA8 /* CardsViewController.swift */; };
+		A0A474D11D889424004B8DA8 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A474D01D889424004B8DA8 /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		A0A474CA1D875A6E004B8DA8 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		A0A474CC1D887CFC004B8DA8 /* BeforeGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeGameViewController.swift; sourceTree = "<group>"; };
 		A0A474CE1D887E49004B8DA8 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
+		A0A474D01D889424004B8DA8 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				A0A474CA1D875A6E004B8DA8 /* MenuViewController.swift */,
 				A0A474CC1D887CFC004B8DA8 /* BeforeGameViewController.swift */,
 				A0A474CE1D887E49004B8DA8 /* CardsViewController.swift */,
+				A0A474D01D889424004B8DA8 /* GameViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				A0A474CD1D887CFC004B8DA8 /* BeforeGameViewController.swift in Sources */,
 				A0A474CF1D887E49004B8DA8 /* CardsViewController.swift in Sources */,
 				A0A474CB1D875A6E004B8DA8 /* MenuViewController.swift in Sources */,
+				A0A474D11D889424004B8DA8 /* GameViewController.swift in Sources */,
 				39BAD9AA1D8358E800B2524B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
