@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39B223841D88649C00E5F3D6 /* CardStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B223831D88649C00E5F3D6 /* CardStore.swift */; };
 		39BAD9AA1D8358E800B2524B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BAD9A91D8358E800B2524B /* AppDelegate.swift */; };
 		39BAD9AC1D8358E800B2524B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BAD9AB1D8358E800B2524B /* ViewController.swift */; };
 		39BAD9AF1D8358E800B2524B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39BAD9AD1D8358E800B2524B /* Main.storyboard */; };
@@ -38,13 +39,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		39B223831D88649C00E5F3D6 /* CardStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStore.swift; sourceTree = "<group>"; };
 		39BAD9A61D8358E800B2524B /* Play Drink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Play Drink.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		39BAD9A91D8358E800B2524B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		39BAD9A91D8358E800B2524B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Play Drink/AppDelegate.swift"; sourceTree = "<group>"; };
 		39BAD9AB1D8358E800B2524B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		39BAD9AE1D8358E800B2524B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		39BAD9B01D8358E800B2524B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39BAD9B31D8358E800B2524B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		39BAD9B51D8358E800B2524B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39BAD9B51D8358E800B2524B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Play Drink/Info.plist"; sourceTree = "<group>"; };
 		39BAD9BA1D8358E800B2524B /* Play DrinkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Play DrinkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39BAD9BE1D8358E800B2524B /* Play_DrinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Play_DrinkTests.swift; sourceTree = "<group>"; };
 		39BAD9C01D8358E800B2524B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,6 +84,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39B223851D8890DC00E5F3D6 /* Assests */ = {
+			isa = PBXGroup;
+			children = (
+				39BAD9B01D8358E800B2524B /* Assets.xcassets */,
+			);
+			name = Assests;
+			path = "Play Drink";
+			sourceTree = "<group>";
+		};
+		39B223861D8890F500E5F3D6 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				39BAD9A91D8358E800B2524B /* AppDelegate.swift */,
+				39BAD9B51D8358E800B2524B /* Info.plist */,
+			);
+			name = System;
+			sourceTree = "<group>";
+		};
 		39BAD99D1D8358E800B2524B = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +109,8 @@
 				39BAD9BD1D8358E800B2524B /* Play DrinkTests */,
 				39BAD9C81D8358E800B2524B /* Play DrinkUITests */,
 				39BAD9A71D8358E800B2524B /* Products */,
+				39B223851D8890DC00E5F3D6 /* Assests */,
+				39B223861D8890F500E5F3D6 /* System */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,15 +127,9 @@
 		39BAD9A81D8358E800B2524B /* Play Drink */ = {
 			isa = PBXGroup;
 			children = (
-				A0A474C91D87598B004B8DA8 /* Controller */,
-				A0A474C81D875978004B8DA8 /* View */,
 				A0A474C71D87596A004B8DA8 /* Model */,
-				39BAD9A91D8358E800B2524B /* AppDelegate.swift */,
-				39BAD9AB1D8358E800B2524B /* ViewController.swift */,
-				39BAD9AD1D8358E800B2524B /* Main.storyboard */,
-				39BAD9B01D8358E800B2524B /* Assets.xcassets */,
-				39BAD9B21D8358E800B2524B /* LaunchScreen.storyboard */,
-				39BAD9B51D8358E800B2524B /* Info.plist */,
+				A0A474C81D875978004B8DA8 /* View */,
+				A0A474C91D87598B004B8DA8 /* Controller */,
 			);
 			path = "Play Drink";
 			sourceTree = "<group>";
@@ -139,6 +155,8 @@
 		A0A474C71D87596A004B8DA8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AD243EB91D87591F00516E54 /* Card.swift */,
+				39B223831D88649C00E5F3D6 /* CardStore.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -146,6 +164,8 @@
 		A0A474C81D875978004B8DA8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				39BAD9B21D8358E800B2524B /* LaunchScreen.storyboard */,
+				39BAD9AD1D8358E800B2524B /* Main.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -298,6 +318,7 @@
 				A0A474CB1D875A6E004B8DA8 /* MenuViewController.swift in Sources */,
 				A0A474D11D889424004B8DA8 /* GameViewController.swift in Sources */,
 				39BAD9AA1D8358E800B2524B /* AppDelegate.swift in Sources */,
+				39B223841D88649C00E5F3D6 /* CardStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
