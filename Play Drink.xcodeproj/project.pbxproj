@@ -129,6 +129,7 @@
 		39BAD9A81D8358E800B2524B /* Play Drink */ = {
 			isa = PBXGroup;
 			children = (
+				AD6F08B11D8B22DB008FA1CD /* Extensions */,
 				A0A474C71D87596A004B8DA8 /* Model */,
 				A0A474C81D875978004B8DA8 /* View */,
 				A0A474C91D87598B004B8DA8 /* Controller */,
@@ -182,6 +183,13 @@
 				39BAD9AB1D8358E800B2524B /* ViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		AD6F08B11D8B22DB008FA1CD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
