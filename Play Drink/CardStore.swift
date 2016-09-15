@@ -23,89 +23,88 @@ class CardStore {
             (   100,
                 "Uma Dose",
                 "Escolha alguém para tomar uma dose.",
-                UIImage(named: "bgg_01")!,
-                UIImage(named: "bgf_01")!,
-                UIImage(named: "bgb_01")!
+                UIImage(named: "card4")!,
+                UIImage(named: "card4")!,
+                UIImage(named: "card4")!
             ),
             
             (   200,
                 "Duas Dose",
                 "Escolha duas pessoas para tomar uma dose.",
-                UIImage(named: "bgg_02")!,
-                UIImage(named: "bgf_02")!,
-                UIImage(named: "bgb_02")!
+                UIImage(named: "card4")!,
+                UIImage(named: "card4")!,
+                UIImage(named: "card4")!
             ),
             
             (   300,
                 "Espelho",
                 "Escolha alguém para beber com você.",
-                UIImage(named: "bgg_03")!,
-                UIImage(named: "bgf_03")!,
-                UIImage(named: "bgb_03")!
+                UIImage(named: "card4")!,
+                UIImage(named: "card4")!,
+                UIImage(named: "card4")!
             ),
             
             (   400,
                 "Fuga do Tema",
                 "Escolha um tema e uma letra do alfabeto e diga uma palavra relacionada. Depois próximo jogador segue o padrão. O primeiro que errar ou não souber, bebe.",
-                UIImage(named: "bgg_04")!,
-                UIImage(named: "bgf_04")!,
-                UIImage(named: "bgb_04")!
-            ),
+                UIImage(named: "card4")!,
+                UIImage(named: "card4")!,
+                UIImage(named: "card4")!            ),
             
             (   500,
                 "Memória",
                 "Fale um palavra qualquer. O próximo tem que repetir a palavra anterior e adicionar outra começando com a útima letra da palavra anterior. Se errar ou não souber deve beber.",
-                UIImage(named: "bgg_05")!,
-                UIImage(named: "bgf_05")!,
-                UIImage(named: "bgb_05")!
+                UIImage(named: "card4")!,
+                UIImage(named: "card4")!,
+                UIImage(named: "card4")!
             ),
             
             (   600,
                 "Continência",
                 "Coloque a mão na testa fazendo continência e observe quais jogadores serão irão repetir o que você fez, quem imitar o ato por último bebe.",
-                UIImage(named: "bgg_06")!,
-                UIImage(named: "bgf_06")!,
-                UIImage(named: "bgb_06")!
+                UIImage(named: "card4")!,
+                UIImage(named: "card4")!,
+                UIImage(named: "card4")!
             ),
             
             (   700,
                 "Pi",
                 "Fale o número 1, o próximo jogador fala 2 e assim por diante. So que deve ser substituído por Pi todos os múltiplos de três.",
-                UIImage(named: "bgg_07")!,
-                UIImage(named: "bgf_07")!,
-                UIImage(named: "bgb_07")!
+                UIImage(named: "card4")!,
+                UIImage(named: "card4")!,
+                UIImage(named: "card4")!
             ),
             
             (   800,
                 "Minha esquerda",
                 "O jogador a sua esquerda bebe uma dose.",
-                UIImage(named: "bgg_08")!,
-                UIImage(named: "bgf_08")!,
-                UIImage(named: "bgb_08")!
+                UIImage(named: "card4")!,
+                UIImage(named: "card4")!,
+                UIImage(named: "card4")!
             ),
             
             (   900,
                 "Só as mulheres",
                 "Todas as mulheres da mesa bebem uma dose.",
-                UIImage(named: "bgg_09")!,
-                UIImage(named: "bgf_09")!,
-                UIImage(named: "bgb_09")!
+                UIImage(named: "card4")!,
+                UIImage(named: "card4")!,
+                UIImage(named: "card4")!
             ),
             
             (   1000,
                 "Só os homens",
                 "Todos os homens da mesa bebem uma dose.",
-                UIImage(named: "bgg_09")!,
-                UIImage(named: "bgf_09")!,
-                UIImage(named: "bgb_09")!
+                UIImage(named: "card4")!,
+                UIImage(named: "card4")!,
+                UIImage(named: "card4")!
             ),
             
             (   1100,
                 "Somente Eu",
                 "Somente você bebe uma dose.",
-                UIImage(named: "bgg_09")!,
-                UIImage(named: "bgf_09")!,
-                UIImage(named: "bgb_09")!
+                UIImage(named: "card4")!,
+                UIImage(named: "card4")!,
+                UIImage(named: "card4")!
             )
             
     
