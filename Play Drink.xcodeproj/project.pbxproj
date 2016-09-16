@@ -20,6 +20,7 @@
 		A0A474CF1D887E49004B8DA8 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A474CE1D887E49004B8DA8 /* CardsViewController.swift */; };
 		A0A474D11D889424004B8DA8 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A474D01D889424004B8DA8 /* GameViewController.swift */; };
 		AD243EBA1D87591F00516E54 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD243EB91D87591F00516E54 /* Card.swift */; };
+		AD6F08B31D8B2358008FA1CD /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F08B21D8B2358008FA1CD /* ArrayExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		A0A474CE1D887E49004B8DA8 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		A0A474D01D889424004B8DA8 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		AD243EB91D87591F00516E54 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		AD6F08B21D8B2358008FA1CD /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 		39BAD9A81D8358E800B2524B /* Play Drink */ = {
 			isa = PBXGroup;
 			children = (
+				AD6F08B11D8B22DB008FA1CD /* Extensions */,
 				A0A474C71D87596A004B8DA8 /* Model */,
 				A0A474C81D875978004B8DA8 /* View */,
 				A0A474C91D87598B004B8DA8 /* Controller */,
@@ -182,6 +185,14 @@
 				39BAD9AB1D8358E800B2524B /* ViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		AD6F08B11D8B22DB008FA1CD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AD6F08B21D8B2358008FA1CD /* ArrayExtensions.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +333,7 @@
 				A09E0BC31D8B2A2B0082B435 /* CardsCollectionViewCell.swift in Sources */,
 				AD243EBA1D87591F00516E54 /* Card.swift in Sources */,
 				39BAD9AA1D8358E800B2524B /* AppDelegate.swift in Sources */,
+				AD6F08B31D8B2358008FA1CD /* ArrayExtensions.swift in Sources */,
 				39B223841D88649C00E5F3D6 /* CardStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
