@@ -61,7 +61,7 @@ class GameViewController: UIViewController {
         
         
         idCardLabel.text = String(c.id)
-        cardNameLabel.text = String(c.tittle)
+        cardNameLabel.text = String(c.title)
         imgCard.image = c.image
         descriptionLabel.text = c.description
         cardView.addSubview(idCardLabel)
