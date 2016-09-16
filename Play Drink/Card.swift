@@ -13,11 +13,10 @@ class Card {
     
     
     var id: Int!
-    var tittle: String!
+    var title: String!
     var description: String!
     var image: UIImage!
     var bg_front: UIImage!
-    var bg_back: UIImage!
     
     
 }

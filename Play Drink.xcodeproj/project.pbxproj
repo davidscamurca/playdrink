@@ -15,6 +15,7 @@
 		39BAD9B41D8358E800B2524B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39BAD9B21D8358E800B2524B /* LaunchScreen.storyboard */; };
 		39BAD9BF1D8358E800B2524B /* Play_DrinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BAD9BE1D8358E800B2524B /* Play_DrinkTests.swift */; };
 		39BAD9CA1D8358E800B2524B /* Play_DrinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BAD9C91D8358E800B2524B /* Play_DrinkUITests.swift */; };
+		A09E0BC31D8B2A2B0082B435 /* CardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09E0BC21D8B2A2B0082B435 /* CardsCollectionViewCell.swift */; };
 		A0A474CB1D875A6E004B8DA8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A474CA1D875A6E004B8DA8 /* MenuViewController.swift */; };
 		A0A474CD1D887CFC004B8DA8 /* BeforeGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A474CC1D887CFC004B8DA8 /* BeforeGameViewController.swift */; };
 		A0A474CF1D887E49004B8DA8 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A474CE1D887E49004B8DA8 /* CardsViewController.swift */; };
@@ -54,6 +55,7 @@
 		39BAD9C51D8358E800B2524B /* Play DrinkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Play DrinkUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39BAD9C91D8358E800B2524B /* Play_DrinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Play_DrinkUITests.swift; sourceTree = "<group>"; };
 		39BAD9CB1D8358E800B2524B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A09E0BC21D8B2A2B0082B435 /* CardsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A0A474CA1D875A6E004B8DA8 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		A0A474CC1D887CFC004B8DA8 /* BeforeGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeGameViewController.swift; sourceTree = "<group>"; };
 		A0A474CE1D887E49004B8DA8 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			children = (
 				39BAD9B21D8358E800B2524B /* LaunchScreen.storyboard */,
 				39BAD9AD1D8358E800B2524B /* Main.storyboard */,
+				A09E0BC21D8B2A2B0082B435 /* CardsCollectionViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				A0A474CF1D887E49004B8DA8 /* CardsViewController.swift in Sources */,
 				A0A474CB1D875A6E004B8DA8 /* MenuViewController.swift in Sources */,
 				A0A474D11D889424004B8DA8 /* GameViewController.swift in Sources */,
+				A09E0BC31D8B2A2B0082B435 /* CardsCollectionViewCell.swift in Sources */,
 				AD243EBA1D87591F00516E54 /* Card.swift in Sources */,
 				39BAD9AA1D8358E800B2524B /* AppDelegate.swift in Sources */,
 				39B223841D88649C00E5F3D6 /* CardStore.swift in Sources */,
@@ -468,6 +472,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "davidcamurca.Play-Drink";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -479,6 +484,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "davidcamurca.Play-Drink";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
