@@ -79,49 +79,6 @@
             </objects>
             <point key="canvasLocation" x="1542.5" y="437.5"/>
         </scene>
-        <!--MainMenuViewController-->
-        <scene sceneID="YWN-Po-xbi">
-            <objects>
-                <viewController title="MainMenuViewController" id="fdg-vJ-iNn" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Asd-Bx-3OI"/>
-                        <viewControllerLayoutGuide type="bottom" id="FxF-fq-Wkn"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kH1-Fg-FOw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8qp-gW-EZq">
-                                <rect key="frame" x="67" y="87" width="240" height="128"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6a5-c4-ZIz">
-                                <rect key="frame" x="170" y="319" width="34" height="30"/>
-                                <state key="normal" title="Start"/>
-                                <connections>
-                                    <segue destination="4yS-Od-d69" kind="show" id="TwK-lN-Rjz"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2l-fn-GC0">
-                                <rect key="frame" x="137" y="357" width="101" height="30"/>
-                                <state key="normal" title="Configurations"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iu6-vH-cfe">
-                                <rect key="frame" x="150" y="395" width="75" height="30"/>
-                                <state key="normal" title="More Apps"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvv-Pw-p0F">
-                                <rect key="frame" x="166" y="433" width="42" height="30"/>
-                                <state key="normal" title="About"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="xmM-Iz-tEa"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TEW-ai-yaj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="423.5" y="2656.5"/>
-        </scene>
         <!--MyGamesViewController-->
         <scene sceneID="r2O-Pb-i0n">
             <objects>
@@ -153,7 +110,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="Qpk-pj-imP" kind="show" id="pA8-MK-wSF"/>
+                                            <segue destination="RvG-72-hOE" kind="show" id="03P-Fs-rV8"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -200,11 +157,37 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="hq8-0G-XpH">
+                        <barButtonItem key="rightBarButtonItem" title="Config" id="g3J-tt-lZu">
+                            <connections>
+                                <segue destination="rVg-1W-Bxu" kind="show" id="iVe-TN-rMN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t7W-AY-Al0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1072.5" y="2656.5"/>
+        </scene>
+        <!--ConfigViewController-->
+        <scene sceneID="b71-OA-99P">
+            <objects>
+                <viewController title="ConfigViewController" id="rVg-1W-Bxu" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WVa-Y0-2DH"/>
+                        <viewControllerLayoutGuide type="bottom" id="lCE-Cn-plq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jh8-OP-gxl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="upp-J5-mbo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1072.5" y="3571.5"/>
         </scene>
         <!--MyFriendsViewController-->
         <scene sceneID="VTV-OW-t2R">
@@ -246,9 +229,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8H-do-qWE">
                                 <rect key="frame" x="172" y="629" width="30" height="30"/>
                                 <state key="normal" title="Ok"/>
-                                <connections>
-                                    <segue destination="RvG-72-hOE" kind="show" id="uBV-Jw-eW8"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Party" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXm-oP-ckh">
                                 <rect key="frame" x="167" y="223" width="41" height="21"/>
@@ -284,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1XT-PM-Hn0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1704.5" y="2656.5"/>
+            <point key="canvasLocation" x="1810.5" y="3627.5"/>
         </scene>
         <!--PreGameSuecaViewController-->
         <scene sceneID="eEE-HD-cch">
@@ -350,6 +330,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Na-lG-0Do">
                                 <rect key="frame" x="172" y="419" width="30" height="30"/>
                                 <state key="normal" title="+"/>
+                                <connections>
+                                    <segue destination="Qpk-pj-imP" kind="show" id="USk-jf-fuP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -694,12 +677,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="fdg-vJ-iNn" kind="relationship" relationship="rootViewController" id="iTU-FB-jCi"/>
+                        <segue destination="4yS-Od-d69" kind="relationship" relationship="rootViewController" id="Vgk-JA-oKG"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4aX-l4-lZv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-320.5" y="2656.5"/>
+            <point key="canvasLocation" x="281.5" y="2656.5"/>
         </scene>
     </scenes>
 </document>
