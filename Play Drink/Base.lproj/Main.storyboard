@@ -79,6 +79,120 @@
             </objects>
             <point key="canvasLocation" x="1542.5" y="437.5"/>
         </scene>
+        <!--MainMenuViewController-->
+        <scene sceneID="YWN-Po-xbi">
+            <objects>
+                <viewController title="MainMenuViewController" id="fdg-vJ-iNn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Asd-Bx-3OI"/>
+                        <viewControllerLayoutGuide type="bottom" id="FxF-fq-Wkn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kH1-Fg-FOw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xmM-Iz-tEa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TEW-ai-yaj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="423.5" y="2656.5"/>
+        </scene>
+        <!--MyGamesViewController-->
+        <scene sceneID="r2O-Pb-i0n">
+            <objects>
+                <viewController title="MyGamesViewController" id="4yS-Od-d69" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GQH-OJ-kgP"/>
+                        <viewControllerLayoutGuide type="bottom" id="5PB-Pl-b4O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lBI-h3-zvL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t7W-AY-Al0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1072.5" y="2656.5"/>
+        </scene>
+        <!--MyFriendsViewController-->
+        <scene sceneID="VTV-OW-t2R">
+            <objects>
+                <viewController title="MyFriendsViewController" id="Qpk-pj-imP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U5u-GX-kcI"/>
+                        <viewControllerLayoutGuide type="bottom" id="K2o-ps-gQ3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BdY-0H-B40">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1XT-PM-Hn0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1704.5" y="2656.5"/>
+        </scene>
+        <!--PreGameSuecaViewController-->
+        <scene sceneID="eEE-HD-cch">
+            <objects>
+                <viewController title="PreGameSuecaViewController" id="RvG-72-hOE" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xil-Gj-JZW"/>
+                        <viewControllerLayoutGuide type="bottom" id="pSX-CZ-dVU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JlJ-VR-4yq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qo4-5R-Lhe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2316.5" y="2656.5"/>
+        </scene>
+        <!--CreateSuecaDeckViewController-->
+        <scene sceneID="6vf-fX-QY3">
+            <objects>
+                <viewController title="CreateSuecaDeckViewController" id="fwy-0e-CvE" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5HV-Sz-eRf"/>
+                        <viewControllerLayoutGuide type="bottom" id="T8H-FR-cyI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="L4y-Jk-i63">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R2f-aq-9wK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1704.5" y="3514.5"/>
+        </scene>
+        <!--SuecaGameViewController-->
+        <scene sceneID="bC9-Wy-Z3w">
+            <objects>
+                <viewController title="SuecaGameViewController" id="yrF-ih-Ywi" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kKg-Ke-goB"/>
+                        <viewControllerLayoutGuide type="bottom" id="UGe-oa-aQc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VHW-Xg-0X5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4FJ-mL-bRH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2926.5" y="2656.5"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="ncU-kY-qws">
             <objects>
@@ -331,6 +445,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aCW-H4-a47" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="444" y="438"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wcJ-RH-INY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7dE-Bc-xhF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d22-qf-T6R">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fdg-vJ-iNn" kind="relationship" relationship="rootViewController" id="iTU-FB-jCi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4aX-l4-lZv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-320.5" y="2656.5"/>
         </scene>
     </scenes>
 </document>
