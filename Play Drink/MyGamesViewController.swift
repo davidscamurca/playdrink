@@ -13,12 +13,31 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
     
    
     
-    @IBOutlet weak var MyGamesCollection: UICollectionView! //collectionView of games that you can play
-    let reuserIdentifier  = "cell"
+    @IBOutlet weak var MyGamesCV: UICollectionView!
+    
+    @IBOutlet weak var StoreGamesCV: UICollectionView!
+    
+    //variables of array of games
+    var allGames = GameStore.singleton.getGames()
+    var myGames: Array<Game>?
+    var storeGames: Array<Game>?
     
     
     override func viewDidLoad() {
+        self.MyGamesCV.delegate = self
+        self.MyGamesCV.dataSource = self
         
+        self.StoreGamesCV.dataSource = self
+        self.StoreGamesCV.delegate = self
+        
+        
+        print(allGames.count)
+        myGames = Array(arrayLiteral: allGames[0])
+        print("My Games: \(myGames?.count)")
+        
+        
+        storeGames = Array(arrayLiteral: allGames[1])
+        print("Store Games: \(storeGames?.count)")
     }
     
     
@@ -26,20 +45,69 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
     
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
-    
+        if collectionView == self.MyGamesCV{
+            if !self.myGames!.isEmpty{
+                return self.myGames!.count
+            }
+            return 0
+        }
+        
+        if !(self.storeGames?.isEmpty)! {
+            print(self.storeGames?.count)
+            return self.storeGames!.count
+        }
+        return 0
     }
     
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = MyGamesCollection.dequeueReusableCellWithReuseIdentifier(reuserIdentifier, forIndexPath: indexPath) as! MyCollectionViewCell
-        
-        return cell
+        if collectionView == self.MyGamesCV {
+            let myGamesCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! MyCollectionViewCell
+            
+            myGamesCell.cellImage.image = self.myGames![indexPath.row].gameIcon
+            myGamesCell.cellLabel.text = self.myGames![indexPath.row].gameName
+            return myGamesCell
+        }else {
+            let storeGamesCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as!
+                MyCollectionViewCell
+            
+            storeGamesCell.cellImage.image = storeGames![indexPath.row].gameIcon
+            storeGamesCell.cellLabel.text = storeGames![indexPath.row].gameName
+            
+            return storeGamesCell
+        }
+    
     }
     
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
     
+        
+        if collectionView == self.MyGamesCV {
+            
+            let card = self.myGames![indexPath.item]
+            self.storeGames?.insert(card, atIndex: 0)
+            self.MyGamesCV.reloadData()
+            
+            
+            self.myGames?.removeAtIndex(indexPath.item)
+            self.MyGamesCV.deleteItemsAtIndexPaths([indexPath])
+            self.MyGamesCV.reloadData()
+            
+            
+            
+        }else {
+            
+            let card = self.storeGames![indexPath.item]
+            self.myGames?.insert(card, atIndex: 0)
+            self.MyGamesCV.reloadData()
+            
+            
+            self.storeGames?.removeAtIndex(indexPath.item)
+            self.MyGamesCV.deleteItemsAtIndexPaths([indexPath])
+            self.MyGamesCV.reloadData()
+            
+        }
     
     }
     
