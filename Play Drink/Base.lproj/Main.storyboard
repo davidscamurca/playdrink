@@ -151,14 +151,21 @@
                                                     <rect key="frame" x="-48" y="-11" width="48" height="44"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ubuntuLogo" translatesAutoresizingMaskIntoConstraints="NO" id="KBo-01-RBn">
-                                                    <rect key="frame" x="16" y="16" width="32" height="32"/>
+                                                    <rect key="frame" x="16" y="8" width="32" height="32"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QoT-rS-4sp">
+                                                    <rect key="frame" x="14" y="43" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <size key="customSize" width="64" height="64"/>
                                         <connections>
                                             <outlet property="cellImage" destination="KBo-01-RBn" id="pIk-br-44Z"/>
+                                            <outlet property="cellLabel" destination="QoT-rS-4sp" id="DS9-K7-krQ"/>
                                             <segue destination="RvG-72-hOE" kind="show" id="XRX-Vz-RGb"/>
                                         </connections>
                                     </collectionViewCell>
