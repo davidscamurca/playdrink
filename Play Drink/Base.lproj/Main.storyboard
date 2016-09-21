@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IZo-en-LNg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IZo-en-LNg">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Menu View Controller-->
@@ -17,10 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Telas_Valhalla_DG" translatesAutoresizingMaskIntoConstraints="NO" id="bSB-yk-BHr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mjx-gi-aTb">
-                                <rect key="frame" x="139" y="413" width="96" height="30"/>
+                                <rect key="frame" x="20" y="617" width="96" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="96" id="Ovx-Dc-Iiu"/>
+                                    <constraint firstAttribute="width" constant="96" id="eqq-RG-TOU"/>
                                 </constraints>
                                 <state key="normal" title="Play game"/>
                                 <connections>
@@ -28,14 +32,17 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ia8-MB-uxq">
-                                <rect key="frame" x="139" y="467" width="96" height="30"/>
+                                <rect key="frame" x="124" y="617" width="96" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="96" id="ZqZ-Za-MQa"/>
+                                </constraints>
                                 <state key="normal" title="Cards"/>
                                 <connections>
                                     <segue destination="BrO-d0-Vv5" kind="show" id="3Wy-ul-oc6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DR6-jR-Drk">
-                                <rect key="frame" x="139" y="520" width="96" height="30"/>
+                                <rect key="frame" x="259" y="617" width="96" height="30"/>
                                 <state key="normal" title="Rules"/>
                                 <connections>
                                     <segue destination="bT1-kC-8Nk" kind="show" id="t2I-aJ-cQT"/>
@@ -44,14 +51,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Mjx-gi-aTb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bhc-Lj-4Gz"/>
-                            <constraint firstItem="ia8-MB-uxq" firstAttribute="leading" secondItem="DR6-jR-Drk" secondAttribute="leading" id="HT9-pb-vhO"/>
-                            <constraint firstItem="Mjx-gi-aTb" firstAttribute="leading" secondItem="ia8-MB-uxq" secondAttribute="leading" id="LTe-2E-ocp"/>
-                            <constraint firstItem="ia8-MB-uxq" firstAttribute="top" secondItem="Mjx-gi-aTb" secondAttribute="bottom" constant="24" id="NCH-V4-SXD"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DR6-jR-Drk" secondAttribute="bottom" constant="117" id="Owo-CT-Xto"/>
-                            <constraint firstItem="DR6-jR-Drk" firstAttribute="top" secondItem="ia8-MB-uxq" secondAttribute="bottom" constant="23" id="SGF-mD-9ig"/>
-                            <constraint firstItem="Mjx-gi-aTb" firstAttribute="trailing" secondItem="ia8-MB-uxq" secondAttribute="trailing" id="pEI-Rh-IAO"/>
-                            <constraint firstItem="ia8-MB-uxq" firstAttribute="trailing" secondItem="DR6-jR-Drk" secondAttribute="trailing" id="zqa-lP-WTB"/>
+                            <constraint firstItem="DR6-jR-Drk" firstAttribute="leading" secondItem="ia8-MB-uxq" secondAttribute="trailing" constant="39" id="6WH-rl-TpM"/>
+                            <constraint firstItem="Mjx-gi-aTb" firstAttribute="baseline" secondItem="ia8-MB-uxq" secondAttribute="baseline" id="Bhq-EM-bVx"/>
+                            <constraint firstAttribute="bottom" secondItem="Mjx-gi-aTb" secondAttribute="bottom" constant="20" symbolic="YES" id="Ctk-0j-YZA"/>
+                            <constraint firstItem="bSB-yk-BHr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RKM-gd-aCf"/>
+                            <constraint firstItem="bSB-yk-BHr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Xg7-bw-QeS"/>
+                            <constraint firstItem="ia8-MB-uxq" firstAttribute="leading" secondItem="Mjx-gi-aTb" secondAttribute="trailing" constant="8" symbolic="YES" id="ZDs-F3-Gc4"/>
+                            <constraint firstItem="bSB-yk-BHr" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="cVy-AJ-k8S"/>
+                            <constraint firstItem="Mjx-gi-aTb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="e3v-FZ-Bdn"/>
+                            <constraint firstItem="ia8-MB-uxq" firstAttribute="baseline" secondItem="DR6-jR-Drk" secondAttribute="baseline" id="iej-bR-XSu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DR6-jR-Drk" secondAttribute="trailing" constant="4" id="xdx-AD-7Ma"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FpG-oL-4Kb"/>
@@ -191,7 +200,7 @@
                                     <outlet property="delegate" destination="Xzm-Fm-2nQ" id="SHj-Sf-saJ"/>
                                 </connections>
                             </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IIr-Uu-uST">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IIr-Uu-uST">
                                 <rect key="frame" x="0.0" y="72" width="375" height="75"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Kwa-gO-Fdx">
@@ -287,6 +296,7 @@
                     <connections>
                         <outlet property="allCardsTV" destination="ZdM-JF-wOy" id="OCx-Qe-qBt"/>
                         <outlet property="buttonTop" destination="1AA-Cd-24j" id="5dW-Ma-Aq5"/>
+                        <outlet property="numCardsLabel" destination="NEO-hk-7dD" id="vVI-0i-FYg"/>
                         <outlet property="selectedCardsTV" destination="IIr-Uu-uST" id="8FH-lU-YpH"/>
                         <segue destination="eh4-jx-Ow9" kind="show" identifier="playGame" id="hOM-KE-RQl"/>
                     </connections>
@@ -306,10 +316,53 @@
                     <view key="view" contentMode="scaleToFill" id="Vab-fC-TJc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9NF-nK-GcV">
+                                <rect key="frame" x="20" y="617" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="1Mq-gg-ouO"/>
+                                </constraints>
+                                <state key="normal" title="Undo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="undo:" destination="eh4-jx-Ow9" eventType="touchUpInside" id="iHw-Me-H21"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWE-mq-WOy">
+                                <rect key="frame" x="282" y="617" width="73" height="30"/>
+                                <state key="normal" title="New game">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="reset:" destination="eh4-jx-Ow9" eventType="touchUpInside" id="Yqi-Es-uHB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1764705882" green="0.52156862749999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="KWE-mq-WOy" firstAttribute="baseline" secondItem="9NF-nK-GcV" secondAttribute="baseline" id="1vZ-vg-NSW"/>
+                            <constraint firstItem="9NF-nK-GcV" firstAttribute="leading" secondItem="Vab-fC-TJc" secondAttribute="leadingMargin" constant="4" id="EFI-fW-rrd"/>
+                            <constraint firstAttribute="bottom" secondItem="9NF-nK-GcV" secondAttribute="bottom" constant="20" symbolic="YES" id="P5H-Kv-XdU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KWE-mq-WOy" secondAttribute="trailing" constant="4" id="rbP-j5-k6I"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="sWX-OS-AiS" appends="YES" id="Otd-bt-fvp"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="panGestureRecognizer" destination="sWX-OS-AiS" id="0Jt-uP-JhI"/>
+                        <outlet property="resetButton" destination="KWE-mq-WOy" id="d60-MK-esU"/>
+                        <outlet property="undoButton" destination="9NF-nK-GcV" id="J1J-gd-es0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DUJ-fC-udM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="sWX-OS-AiS">
+                    <connections>
+                        <action selector="panDetected:" destination="eh4-jx-Ow9" id="f4H-wB-3hs"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2112.5" y="-374.5"/>
         </scene>
@@ -333,4 +386,7 @@
             <point key="canvasLocation" x="444" y="438"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Telas_Valhalla_DG" width="375" height="671"/>
+    </resources>
 </document>
