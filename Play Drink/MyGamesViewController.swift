@@ -20,6 +20,9 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
     var allGames = GameStore.singleton.getGames()
     var myGames: Array<Game>?
     var store: Array<Game>?
+    
+    //count 
+    var c = 1
    
     
     
@@ -30,13 +33,21 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
         self.StoreGamesCV.dataSource = self
         self.StoreGamesCV.delegate = self
         
-        
         print("All games: \(allGames.count)")
         myGames = Array(arrayLiteral: allGames[0])
         print("My Games: \(myGames?.count)")
         
-        store = Array(arrayLiteral: allGames[1],allGames[2])
-        print("Store Games: \(store?.count)")
+        store = Array()
+        while c < allGames.count {
+            store?.append(allGames[c])
+            c = c+1
+        }
+        
+        
+        print(store?.count)
+        
+//        store = Array(arrayLiteral: allGames[1],allGames[2])
+//        print("Store Games: \(store?.count)")
         
         
         
@@ -79,13 +90,6 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
     
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
-        if collectionView == self.MyGamesCV {
-            print("MyGames selected!")
-            var itemNo = indexPath.row
-            print("item: \(itemNo)")
-        }
-        
         
         if collectionView == self.StoreGamesCV {
             print("Game sold!")
