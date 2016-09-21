@@ -20,7 +20,7 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
     //variables of array of games
     var allGames = GameStore.singleton.getGames()
     var myGames: Array<Game>?
-    var storeGames: Array<Game>?
+    var storeGames: [Game]? = []
     
     
     override func viewDidLoad() {
@@ -36,8 +36,7 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
         print("My Games: \(myGames?.count)")
         
         
-        storeGames = Array(arrayLiteral: allGames[1])
-        print("Store Games: \(storeGames?.count)")
+       
     }
     
     
@@ -82,33 +81,7 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
     
-        
-        if collectionView == self.MyGamesCV {
             
-            let card = self.myGames![indexPath.item]
-            self.storeGames?.insert(card, atIndex: 0)
-            self.MyGamesCV.reloadData()
-            
-            
-            self.myGames?.removeAtIndex(indexPath.item)
-            self.MyGamesCV.deleteItemsAtIndexPaths([indexPath])
-            self.MyGamesCV.reloadData()
-            
-            
-            
-        }else {
-            
-            let card = self.storeGames![indexPath.item]
-            self.myGames?.insert(card, atIndex: 0)
-            self.MyGamesCV.reloadData()
-            
-            
-            self.storeGames?.removeAtIndex(indexPath.item)
-            self.MyGamesCV.deleteItemsAtIndexPaths([indexPath])
-            self.MyGamesCV.reloadData()
-            
-        }
-    
     }
     
     

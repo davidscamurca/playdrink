@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7dE-Bc-xhF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Qpk-pj-imP">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -142,6 +142,10 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <size key="customSize" width="64" height="64"/>
+                                        <connections>
+                                            <outlet property="cellImage" destination="JxU-0J-QJB" id="yMI-Xi-3tU"/>
+                                            <outlet property="cellLabel" destination="PYu-gm-r3b" id="eZr-1o-Ujg"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -169,15 +173,15 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJT-ML-48n">
                                                     <rect key="frame" x="-48" y="-11" width="48" height="44"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ubuntuLogo" translatesAutoresizingMaskIntoConstraints="NO" id="KBo-01-RBn">
-                                                    <rect key="frame" x="16" y="8" width="32" height="32"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QoT-rS-4sp">
                                                     <rect key="frame" x="14" y="43" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ubuntuLogo" translatesAutoresizingMaskIntoConstraints="NO" id="KBo-01-RBn">
+                                                    <rect key="frame" x="16" y="8" width="32" height="32"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -269,7 +273,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jhT-NP-E7w" customClass="MyCollectionViewCell" customModule="Play_Drink" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="jhT-NP-E7w" customClass="MyCollectionViewCell" customModule="Play_Drink" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -282,18 +286,22 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0k-s5-f9P">
                                                     <rect key="frame" x="11" y="35" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <size key="customSize" width="64" height="64"/>
+                                        <connections>
+                                            <outlet property="cellImage" destination="dAT-KC-UHc" id="qAB-aR-LHs"/>
+                                            <outlet property="cellLabel" destination="y0k-s5-f9P" id="yQf-PY-9nX"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="Qpk-pj-imP" id="DcW-FY-TDH"/>
-                                    <outlet property="delegate" destination="Qpk-pj-imP" id="0eG-31-0dg"/>
+                                    <outlet property="dataSource" destination="Qpk-pj-imP" id="SE0-ap-xzF"/>
+                                    <outlet property="delegate" destination="Qpk-pj-imP" id="013-sr-q4D"/>
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RNU-ve-Qau">
@@ -306,31 +314,35 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eZ4-Uq-5Rg" customClass="MyCollectionViewCell" customModule="Play_Drink" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="eZ4-Uq-5Rg" customClass="MyCollectionViewCell" customModule="Play_Drink" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GYz-I8-Efe">
-                                                    <rect key="frame" x="16" y="0.0" width="32" height="32"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxk-CV-71i">
                                                     <rect key="frame" x="8" y="43" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GYz-I8-Efe">
+                                                    <rect key="frame" x="16" y="0.0" width="32" height="32"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <size key="customSize" width="64" height="64"/>
+                                        <connections>
+                                            <outlet property="cellImage" destination="GYz-I8-Efe" id="Wgf-HQ-nFV"/>
+                                            <outlet property="cellLabel" destination="oxk-CV-71i" id="hlZ-ry-iqu"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="Qpk-pj-imP" id="Pt4-Ex-jDu"/>
-                                    <outlet property="delegate" destination="Qpk-pj-imP" id="Xyc-1U-ulb"/>
+                                    <outlet property="dataSource" destination="Qpk-pj-imP" id="BSf-pJ-oMo"/>
+                                    <outlet property="delegate" destination="Qpk-pj-imP" id="A9u-1S-cIz"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -338,8 +350,8 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="selectedsCollectionView" destination="RNU-ve-Qau" id="zaA-KQ-8pf"/>
-                        <outlet property="toPlayCollectionView" destination="vLL-j4-D0w" id="RXb-pk-90i"/>
+                        <outlet property="selectedCollectionView" destination="RNU-ve-Qau" id="ksG-n9-gwv"/>
+                        <outlet property="toPlayCollectionView" destination="vLL-j4-D0w" id="wvg-6X-lf7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1XT-PM-Hn0" userLabel="First Responder" sceneMemberID="firstResponder"/>
