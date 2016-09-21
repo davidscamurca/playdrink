@@ -189,7 +189,7 @@
                                         <connections>
                                             <outlet property="cellImage" destination="KBo-01-RBn" id="pIk-br-44Z"/>
                                             <outlet property="cellLabel" destination="QoT-rS-4sp" id="DS9-K7-krQ"/>
-                                            <segue destination="RvG-72-hOE" kind="show" id="XRX-Vz-RGb"/>
+                                            <segue destination="RvG-72-hOE" kind="show" identifier="gotoGame" id="XRX-Vz-RGb"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

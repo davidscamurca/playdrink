@@ -84,9 +84,6 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
             print("MyGames selected!")
             var itemNo = indexPath.row
             print("item: \(itemNo)")
-            
-            
-            
         }
         
         
