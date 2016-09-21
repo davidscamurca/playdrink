@@ -13,8 +13,10 @@ class BeforeGameViewController: UIViewController, UICollectionViewDataSource, UI
     @IBOutlet var allCardsTV: UICollectionView!
     @IBOutlet var selectedCardsTV: UICollectionView!
     @IBOutlet var buttonTop: UIBarButtonItem!
+    @IBOutlet var numCardsLabel: UILabel!
     var allCards = CardStore.singleton.getCard()
     var selectedCards : [Card]? = []
+    var numCards = 6
     
     
     let collectionViewAIdentifier = "cellA"
@@ -63,8 +65,6 @@ class BeforeGameViewController: UIViewController, UICollectionViewDataSource, UI
         }
     }
     
-    
-    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         if collectionView == self.allCardsTV {
@@ -72,11 +72,16 @@ class BeforeGameViewController: UIViewController, UICollectionViewDataSource, UI
             let card = self.allCards[indexPath.item]
             self.selectedCards?.insert(card, atIndex: 0)
             self.selectedCardsTV.reloadData()
-
+            
             
             self.allCards.removeAtIndex(indexPath.item)
             self.allCardsTV.deleteItemsAtIndexPaths([indexPath])
             self.allCardsTV.reloadData()
+            
+            if self.numCards > 0{
+                self.numCards -= 1
+                self.numCardsLabel.text = "add at least \(self.numCards) cards in order to play"
+            }
             
             if self.allCards.isEmpty {
                 
@@ -94,16 +99,25 @@ class BeforeGameViewController: UIViewController, UICollectionViewDataSource, UI
             self.selectedCardsTV.deleteItemsAtIndexPaths([indexPath])
             self.selectedCardsTV.reloadData()
             
+            if self.selectedCards?.count < 6{
+                self.numCards = (6 - self.selectedCards!.count)
+                self.numCardsLabel.text = "add at least \(self.numCards) cards in order to play"
+            }
+            
             self.buttonTop.title = "Select All"
         }
     }
     
     //Mark: IBActions
     
-    
     @IBAction func playGame(sender: UIButton) {
         if self.selectedCards?.count > 5 {
             performSegueWithIdentifier("playGame", sender: nil)
+        }else {
+            self.numCardsLabel.frame.origin.x = 30
+            UIView.animateWithDuration(0.7, delay: 0, usingSpringWithDamping: 0.1, initialSpringVelocity: 5, options: .CurveEaseOut, animations: {
+                self.numCardsLabel.frame.origin.x = 0
+                }, completion: nil)
         }
     }
     
@@ -120,6 +134,8 @@ class BeforeGameViewController: UIViewController, UICollectionViewDataSource, UI
                 self.selectedCardsTV.reloadData()
                 self.allCardsTV.reloadData()
             }
+            self.numCards = 0
+            self.numCardsLabel.text = "add at least \(self.numCards) cards in order to play"
             sender.title = "Remove All"
         }else {
             
@@ -132,9 +148,31 @@ class BeforeGameViewController: UIViewController, UICollectionViewDataSource, UI
                 self.selectedCardsTV.reloadData()
                 self.allCardsTV.reloadData()
             }
+            self.numCards = 6
+            self.numCardsLabel.text = "add at least \(self.numCards) cards in order to play"
             sender.title = "Select All"
         }
     }
     
+    //Mark: Func's
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "playGame" {
+            
+            let nextVC = segue.destinationViewController as! GameViewController
+            var fourTimesSelectedCards : [Card]! = []
+            var i = 0
+            
+            
+            while fourTimesSelectedCards.count != 12 {
+                
+                let card = i % selectedCards!.count
+                i += 1
+                fourTimesSelectedCards.append(self.selectedCards![card])
+            }
+            nextVC.cardModel = fourTimesSelectedCards
+        }
+    }
     
 }
