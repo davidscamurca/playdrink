@@ -35,7 +35,7 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
         myGames = Array(arrayLiteral: allGames[0])
         print("My Games: \(myGames?.count)")
         
-        store = Array(arrayLiteral: allGames[1])
+        store = Array(arrayLiteral: allGames[1],allGames[2])
         print("Store Games: \(store?.count)")
         
         
@@ -79,6 +79,16 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
     
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        if collectionView == self.MyGamesCV {
+            print("MyGames selected!")
+            var itemNo = indexPath.row
+            print("item: \(itemNo)")
+            
+            
+            
+        }
+        
         
         if collectionView == self.StoreGamesCV {
             print("Game sold!")

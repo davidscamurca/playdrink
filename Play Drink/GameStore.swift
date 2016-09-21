@@ -25,6 +25,10 @@ class GameStore{
         (
             "Stop",
             UIImage(named: "fedoraLogo")!
+        ),
+        (
+            "Desafio",
+            UIImage(named: "tux")!
         )
     
     ] //close dataGames
