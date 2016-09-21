@@ -109,6 +109,51 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Om2-rJ-5ZH">
+                                <rect key="frame" x="20" y="72" width="335" height="69"/>
+                                <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Q2Q-eY-0DO">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="1dT-sA-FTB" customClass="MyCollectionViewCell" customModule="Play_Drink" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="2.5" width="64" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJT-ML-48n">
+                                                    <rect key="frame" x="-48" y="-11" width="48" height="44"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QoT-rS-4sp">
+                                                    <rect key="frame" x="14" y="43" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ubuntuLogo" translatesAutoresizingMaskIntoConstraints="NO" id="KBo-01-RBn">
+                                                    <rect key="frame" x="16" y="8" width="32" height="32"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <size key="customSize" width="64" height="64"/>
+                                        <connections>
+                                            <outlet property="cellImage" destination="KBo-01-RBn" id="pIk-br-44Z"/>
+                                            <outlet property="cellLabel" destination="QoT-rS-4sp" id="DS9-K7-krQ"/>
+                                            <segue destination="RvG-72-hOE" kind="show" identifier="gotoGame" id="XRX-Vz-RGb"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="4yS-Od-d69" id="V1y-IK-q5H"/>
+                                    <outlet property="delegate" destination="4yS-Od-d69" id="XFA-Xu-Omq"/>
+                                </connections>
+                            </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IeJ-Ed-MOR">
                                 <rect key="frame" x="20" y="226" width="335" height="392"/>
                                 <color key="backgroundColor" red="0.26506358390000001" green="0.89628338809999997" blue="0.98993295429999995" alpha="1" colorSpace="deviceRGB"/>
@@ -147,55 +192,38 @@
                                             <outlet property="cellLabel" destination="PYu-gm-r3b" id="eZr-1o-Ujg"/>
                                         </connections>
                                     </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="4yS-Od-d69" id="2bL-FE-YUV"/>
-                                    <outlet property="delegate" destination="4yS-Od-d69" id="nrH-qS-PZg"/>
-                                </connections>
-                            </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Om2-rJ-5ZH">
-                                <rect key="frame" x="20" y="72" width="335" height="69"/>
-                                <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Q2Q-eY-0DO">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="1dT-sA-FTB" customClass="MyCollectionViewCell" customModule="Play_Drink" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="3" width="64" height="64"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="storeCell" id="Nql-XT-fF8" customClass="MyCollectionViewCell" customModule="Play_Drink" customModuleProvider="target">
+                                        <rect key="frame" x="90.5" y="0.0" width="64" height="64"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJT-ML-48n">
-                                                    <rect key="frame" x="-48" y="-11" width="48" height="44"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="szu-GN-B9j">
+                                                    <rect key="frame" x="-88" y="-25" width="32" height="32"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QoT-rS-4sp">
-                                                    <rect key="frame" x="14" y="43" width="42" height="21"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n46-pA-bYT">
+                                                    <rect key="frame" x="16" y="8" width="32" height="32"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUN-cW-7T4">
+                                                    <rect key="frame" x="11" y="43" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ubuntuLogo" translatesAutoresizingMaskIntoConstraints="NO" id="KBo-01-RBn">
-                                                    <rect key="frame" x="16" y="8" width="32" height="32"/>
-                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <size key="customSize" width="64" height="64"/>
                                         <connections>
-                                            <outlet property="cellImage" destination="KBo-01-RBn" id="pIk-br-44Z"/>
-                                            <outlet property="cellLabel" destination="QoT-rS-4sp" id="DS9-K7-krQ"/>
-                                            <segue destination="RvG-72-hOE" kind="show" identifier="gotoGame" id="XRX-Vz-RGb"/>
+                                            <outlet property="cellImage" destination="n46-pA-bYT" id="l4r-DF-xT8"/>
+                                            <outlet property="cellLabel" destination="AUN-cW-7T4" id="50J-We-5Jl"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="4yS-Od-d69" id="V1y-IK-q5H"/>
-                                    <outlet property="delegate" destination="4yS-Od-d69" id="XFA-Xu-Omq"/>
+                                    <outlet property="dataSource" destination="4yS-Od-d69" id="2bL-FE-YUV"/>
+                                    <outlet property="delegate" destination="4yS-Od-d69" id="nrH-qS-PZg"/>
                                 </connections>
                             </collectionView>
                         </subviews>
