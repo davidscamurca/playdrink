@@ -14,13 +14,13 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
    
     
     @IBOutlet weak var MyGamesCV: UICollectionView!
-    
     @IBOutlet weak var StoreGamesCV: UICollectionView!
     
     //variables of array of games
     var allGames = GameStore.singleton.getGames()
     var myGames: Array<Game>?
-    var storeGames: [Game]? = []
+    var store: Array<Game>?
+   
     
     
     override func viewDidLoad() {
@@ -31,17 +31,17 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
         self.StoreGamesCV.delegate = self
         
         
-        print(allGames.count)
+        print("All games: \(allGames.count)")
         myGames = Array(arrayLiteral: allGames[0])
         print("My Games: \(myGames?.count)")
+        
+        store = Array(arrayLiteral: allGames[1])
+        print("Store Games: \(store?.count)")
+        
         
         
        
     }
-    
-    
-    
-    
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.MyGamesCV{
@@ -50,11 +50,10 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
             }
             return 0
         }
-        
-        if !(self.storeGames?.isEmpty)! {
-            print(self.storeGames?.count)
-            return self.storeGames!.count
+        else if collectionView == self.StoreGamesCV {
+            return  (store?.count)!
         }
+        
         return 0
     }
     
@@ -70,8 +69,8 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
             let storeGamesCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as!
                 MyCollectionViewCell
             
-            storeGamesCell.cellImage.image = storeGames![indexPath.row].gameIcon
-            storeGamesCell.cellLabel.text = storeGames![indexPath.row].gameName
+            storeGamesCell.cellImage.image = store![indexPath.row].gameIcon
+            storeGamesCell.cellLabel.text = store![indexPath.row].gameName
             
             return storeGamesCell
         }
@@ -80,7 +79,17 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
     
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-    
+        
+        if collectionView == self.StoreGamesCV {
+            print("Game sold!")
+            let game = self.store![indexPath.item]
+            self.myGames?.insert(game, atIndex: 1)
+            self.MyGamesCV.reloadData()
+            
+            self.store?.removeAtIndex(indexPath.row)
+            self.StoreGamesCV.deleteItemsAtIndexPaths([indexPath])
+            self.StoreGamesCV.reloadData()
+        }
             
     }
     
