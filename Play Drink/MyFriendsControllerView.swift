@@ -75,6 +75,27 @@ class MyFriendsControllerView: UIViewController, UICollectionViewDataSource, UIC
     
       func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
+        if collectionView == self.toPlayCollectionView {
+            print("toPlayCollectionView clicked!")
+            let player = self.allPlayers[indexPath.item]
+            self.selecteds?.insert(player, atIndex: 0)
+            self.selectedCollectionView.reloadData()
+            
+            self.allPlayers.removeAtIndex(indexPath.item)
+            self.toPlayCollectionView.deleteItemsAtIndexPaths([indexPath])
+            self.toPlayCollectionView.reloadData()
+        }else{
+            print("selectedCollectionView clicked!")
+            let player = self.selecteds![indexPath.item]
+            self.allPlayers.insert(player, atIndex: 0)
+            self.toPlayCollectionView.reloadData()
+            
+            self.selecteds?.removeAtIndex(indexPath.item)
+            self.selectedCollectionView.deleteItemsAtIndexPaths([indexPath])
+            self.selectedCollectionView.reloadData()
+        }
+        
+        
     }
 
 }
