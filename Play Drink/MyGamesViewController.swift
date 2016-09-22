@@ -11,7 +11,6 @@ import UIKit
 
 class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-   
     //Mark: IBOutlet
     
     @IBOutlet weak var MyGamesCV: UICollectionView!
@@ -31,10 +30,16 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
     var alertController: UIAlertController?
     
     
+    //background image
+    var viewBackground = UIImageView(image: UIImage(named: "background"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        self.view.addSubview(viewBackground)
+        self.view.sendSubviewToBack(viewBackground)
+        
+        
         self.MyGamesCV.delegate = self
         self.MyGamesCV.dataSource = self
         

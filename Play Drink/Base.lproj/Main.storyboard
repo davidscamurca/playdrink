@@ -100,14 +100,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Store" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lW-4k-MIH">
-                                <rect key="frame" x="167" y="190" width="41" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Om2-rJ-5ZH">
-                                <rect key="frame" x="20" y="72" width="335" height="69"/>
+                                <rect key="frame" x="20" y="424" width="335" height="69"/>
                                 <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Q2Q-eY-0DO">
                                     <size key="itemSize" width="50" height="50"/>
@@ -117,14 +111,14 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="1dT-sA-FTB" customClass="MyCollectionViewCell" customModule="Play_Drink" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="3" width="64" height="64"/>
+                                        <rect key="frame" x="0.0" y="34.5" width="64" height="64"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJT-ML-48n">
-                                                    <rect key="frame" x="-48" y="-11" width="48" height="44"/>
+                                                    <rect key="frame" x="-48" y="-21" width="48" height="54"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QoT-rS-4sp">
                                                     <rect key="frame" x="14" y="43" width="42" height="21"/>
@@ -152,7 +146,7 @@
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IeJ-Ed-MOR">
-                                <rect key="frame" x="20" y="226" width="335" height="392"/>
+                                <rect key="frame" x="20" y="550" width="335" height="97"/>
                                 <color key="backgroundColor" red="0.26506358390000001" green="0.89628338809999997" blue="0.98993295429999995" alpha="1" colorSpace="deviceRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PvO-ML-VzH">
                                     <size key="itemSize" width="50" height="50"/>
@@ -195,6 +189,22 @@
                                     <outlet property="delegate" destination="4yS-Od-d69" id="nrH-qS-PZg"/>
                                 </connections>
                             </collectionView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tituloStore" translatesAutoresizingMaskIntoConstraints="NO" id="YIY-7D-gxi">
+                                <rect key="frame" x="20" y="506" width="335" height="36"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tiuloMyGames" translatesAutoresizingMaskIntoConstraints="NO" id="mGz-9A-GYP">
+                                <rect key="frame" x="20" y="380" width="335" height="36"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="simboloNordico" translatesAutoresizingMaskIntoConstraints="NO" id="Y0J-4n-AoB">
+                                <rect key="frame" x="20" y="72" width="335" height="41"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keB-GS-2im">
+                                <rect key="frame" x="309" y="115" width="46" height="30"/>
+                                <state key="normal" title="Config"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="valkyrie" translatesAutoresizingMaskIntoConstraints="NO" id="B8s-x8-ldd">
+                                <rect key="frame" x="41" y="121" width="292" height="235"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -842,6 +852,10 @@
     </scenes>
     <resources>
         <image name="Telas_Valhalla_DG" width="16" height="16"/>
+        <image name="simboloNordico" width="572" height="46"/>
+        <image name="tituloStore" width="313" height="34"/>
+        <image name="tiuloMyGames" width="313" height="34"/>
         <image name="ubuntuLogo" width="32" height="32"/>
+        <image name="valkyrie" width="323" height="281"/>
     </resources>
 </document>

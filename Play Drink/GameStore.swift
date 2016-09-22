@@ -19,20 +19,29 @@ class GameStore{
     
     )] = [
         (
-            "Sueca",
-            UIImage(named: "ubuntuLogo")!
+            "Sueca Drinking Game",
+            UIImage(named: "iconSueca")!
         ),
         (
-            "Stop",
-            UIImage(named: "fedoraLogo")!
+            "Tiger Arraived",
+            UIImage(named: "iconTiger")!
         ),
         (
-            "Desafio",
-            UIImage(named: "tux")!
+            "Nerd Drink",
+            UIImage(named: "iconNerd")!
         ),
         (
-            "Buy More",
-            UIImage(named: "coin")!
+            "Ferir Game",
+            UIImage(named: "iconFerir")!
+        ),
+        (
+            "Once Upon a Time",
+            UIImage(named: "iconEraumavez")!
+        
+        ),
+        (
+            "Truth or Dare",
+            UIImage(named: "iconTruth")!
         )
     
     ] //close dataGames
