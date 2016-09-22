@@ -15,8 +15,8 @@ class PlayerStore {
     
     
     let dataPlayers: [(
-                String,
-                UIImage
+                String, //name of player
+                UIImage //avatar of player
     )] = [
         (
             "Anderson",

@@ -12,8 +12,7 @@ import UIKit
 class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
    
-    @IBOutlet weak var coinsAvaliableLabel: UILabel!
-    
+    //Mark: IBOutlet
     
     @IBOutlet weak var MyGamesCV: UICollectionView!
     @IBOutlet weak var StoreGamesCV: UICollectionView!
@@ -25,7 +24,6 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
     
     //support vars
     var c = 1
-    var coinsAvaliable: Int = Int(375)
     
     
     //alerts
@@ -33,9 +31,6 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
     var alertController: UIAlertController?
     
     
-    override func viewWillAppear(animated: Bool) {
-         self.coinsAvaliableLabel.text = String(self.coinsAvaliable)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,7 +106,7 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
             }else {
                 
                 //alert to buy a game
-                self.alertController = UIAlertController(title: "Buy Game", message: "Do you wish buy this game for 10 coins?", preferredStyle: .Alert)
+                self.alertController = UIAlertController(title: "Buy Game", message: "Do you wish buy this game?", preferredStyle: .Alert)
                 
                 //creating buttons to alert
                 let buyButton = UIAlertAction(title: "Buy", style: .Default){
@@ -125,16 +120,15 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
                     self.StoreGamesCV.deleteItemsAtIndexPaths([indexPath])
                     self.StoreGamesCV.reloadData()
                     
-                    self.coinsAvaliable = self.coinsAvaliable-10
-                    self.coinsAvaliableLabel.text = String(self.coinsAvaliable)
-                    
                 }
                 
+                //button to cancel operation
                 let cancelButton = UIAlertAction(title: "Cancel", style: .Default){
                     UIAlertAction in
                     self.alertController?.dismissViewControllerAnimated(true, completion: nil)
                 }
                 
+                //add buttons in alertController
                 self.alertController?.addAction(buyButton)
                 self.alertController?.addAction(cancelButton)
                 

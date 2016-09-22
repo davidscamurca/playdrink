@@ -10,6 +10,7 @@ import UIKit
 
 class MyFriendsControllerView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
    
+    //Mark: IBOutlets
     
     @IBOutlet weak var selectedCollectionView: UICollectionView! //top collection
     @IBOutlet weak var toPlayCollectionView: UICollectionView! //botton collection
@@ -18,6 +19,9 @@ class MyFriendsControllerView: UIViewController, UICollectionViewDataSource, UIC
     //var to players
     var allPlayers = PlayerStore.singleton.getPlayers()
     var selecteds : [Player]? = []
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +37,8 @@ class MyFriendsControllerView: UIViewController, UICollectionViewDataSource, UIC
 
     }
     
-    
-    
-    
-    
     //Mark: Collectionview Data Source
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.toPlayCollectionView {
             if !self.allPlayers.isEmpty {
