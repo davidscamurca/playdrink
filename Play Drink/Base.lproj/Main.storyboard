@@ -108,7 +108,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="1dT-sA-FTB" customClass="MyCollectionViewCell" customModule="Play_Drink" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="3" width="64" height="64"/>
+                                        <rect key="frame" x="0.0" y="2.5" width="64" height="64"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
