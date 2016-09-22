@@ -70,13 +70,23 @@ class MyFriendsControllerView: UIViewController, UICollectionViewDataSource, UIC
             
             return cellB
         }
+        
+        
+        let cellC = collectionView.dequeueReusableCellWithReuseIdentifier("storeCell", forIndexPath: indexPath) as! MyCollectionViewCell
+        
+        cellC.cellLabel.text = "Buy"
+        cellC.cellImage.image = UIImage(named: "coin")
+        return cellC
     }
     
     
       func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
+       
+       
+        
+        
         if collectionView == self.toPlayCollectionView {
-            print("toPlayCollectionView clicked!")
             let player = self.allPlayers[indexPath.item]
             self.selecteds?.insert(player, atIndex: 0)
             self.selectedCollectionView.reloadData()

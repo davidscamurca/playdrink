@@ -29,6 +29,10 @@ class GameStore{
         (
             "Desafio",
             UIImage(named: "tux")!
+        ),
+        (
+            "Buy More",
+            UIImage(named: "coin")!
         )
     
     ] //close dataGames
