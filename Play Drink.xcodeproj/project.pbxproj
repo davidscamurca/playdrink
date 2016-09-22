@@ -14,7 +14,10 @@
 		39BAD9B41D8358E800B2524B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39BAD9B21D8358E800B2524B /* LaunchScreen.storyboard */; };
 		39BAD9BF1D8358E800B2524B /* Play_DrinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BAD9BE1D8358E800B2524B /* Play_DrinkTests.swift */; };
 		39BAD9CA1D8358E800B2524B /* Play_DrinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BAD9C91D8358E800B2524B /* Play_DrinkUITests.swift */; };
-		A04F4EA31D8C7A4D00C50DF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04F4EA21D8C7A4D00C50DF4 /* Assets.xcassets */; };
+		A04F4EA51D8C7C2800C50DF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04F4EA41D8C7C2800C50DF4 /* Assets.xcassets */; };
+		A08DF1131D906C7500B9275D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DF1121D906C7500B9275D /* CardView.swift */; };
+		A08DF1151D906E4A00B9275D /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08DF1141D906E4A00B9275D /* View.xib */; };
+		A08DF1171D906F3300B9275D /* DetailTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DF1161D906F3300B9275D /* DetailTransitionDelegate.swift */; };
 		A09E0BC31D8B2A2B0082B435 /* CardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09E0BC21D8B2A2B0082B435 /* CardsCollectionViewCell.swift */; };
 		A0A474CB1D875A6E004B8DA8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A474CA1D875A6E004B8DA8 /* MenuViewController.swift */; };
 		A0A474CD1D887CFC004B8DA8 /* BeforeGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A474CC1D887CFC004B8DA8 /* BeforeGameViewController.swift */; };
@@ -62,7 +65,10 @@
 		39BAD9C51D8358E800B2524B /* Play DrinkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Play DrinkUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39BAD9C91D8358E800B2524B /* Play_DrinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Play_DrinkUITests.swift; sourceTree = "<group>"; };
 		39BAD9CB1D8358E800B2524B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A04F4EA21D8C7A4D00C50DF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A04F4EA41D8C7C2800C50DF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A08DF1121D906C7500B9275D /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		A08DF1141D906E4A00B9275D /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		A08DF1161D906F3300B9275D /* DetailTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTransitionDelegate.swift; sourceTree = "<group>"; };
 		A09E0BC21D8B2A2B0082B435 /* CardsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A0A474CA1D875A6E004B8DA8 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		A0A474CC1D887CFC004B8DA8 /* BeforeGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeGameViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +110,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39B223851D8890DC00E5F3D6 /* Assests */ = {
+			isa = PBXGroup;
+			children = (
+				A04F4EA41D8C7C2800C50DF4 /* Assets.xcassets */,
+			);
+			name = Assests;
+			path = "Play Drink";
+			sourceTree = "<group>";
+		};
 		39B223861D8890F500E5F3D6 /* System */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +153,7 @@
 		39BAD9A81D8358E800B2524B /* Play Drink */ = {
 			isa = PBXGroup;
 			children = (
+				A08DF1161D906F3300B9275D /* DetailTransitionDelegate.swift */,
 				AD6F08B11D8B22DB008FA1CD /* Extensions */,
 				A0A474C71D87596A004B8DA8 /* Model */,
 				A0A474C81D875978004B8DA8 /* View */,
@@ -190,7 +206,9 @@
 			children = (
 				39BAD9B21D8358E800B2524B /* LaunchScreen.storyboard */,
 				39BAD9AD1D8358E800B2524B /* Main.storyboard */,
+				A08DF1141D906E4A00B9275D /* View.xib */,
 				A09E0BC21D8B2A2B0082B435 /* CardsCollectionViewCell.swift */,
+				A08DF1121D906C7500B9275D /* CardView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -286,6 +304,7 @@
 				TargetAttributes = {
 					39BAD9A51D8358E800B2524B = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 2577FS5BXM;
 					};
 					39BAD9B91D8358E800B2524B = {
 						CreatedOnToolsVersion = 7.3;
@@ -322,8 +341,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A08DF1151D906E4A00B9275D /* View.xib in Resources */,
 				39BAD9B41D8358E800B2524B /* LaunchScreen.storyboard in Resources */,
-				A04F4EA31D8C7A4D00C50DF4 /* Assets.xcassets in Resources */,
+				A04F4EA51D8C7C2800C50DF4 /* Assets.xcassets in Resources */,
 				39BAD9AF1D8358E800B2524B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,10 +527,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Play Drink/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "davidcamurca.Play-Drink";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -519,10 +542,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Play Drink/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "davidcamurca.Play-Drink";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
