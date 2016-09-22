@@ -56,7 +56,7 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
             store?.append(allGames[c])
             c = c+1
         }
-        print(store?.count)
+        print("All store games: \(store?.count)")
        
     }
     
@@ -103,11 +103,10 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        var itemNo = indexPath.row
-        
         
         if collectionView == self.StoreGamesCV {
-            if itemNo == 2{
+            print("selected: \(indexPath.row) -- total store: \(store?.endIndex)")
+            if indexPath.row == (store?.endIndex)!-1{
                 print("go to shop")
             }else {
                 
