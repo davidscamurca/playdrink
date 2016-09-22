@@ -208,16 +208,7 @@ class GameViewController: UIViewController {
     
     // MARK: - Segues
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        idCardLabel.text = String(c.id)
-        cardNameLabel.text = String(c.title)
-        imgCard.image = c.image
-        descriptionLabel.text = c.description
-        cardView.addSubview(idCardLabel)
-        cardView.addSubview(cardNameLabel)
-        cardView.addSubview(imgCard)
-        cardView.addSubview(descriptionLabel)
+    func dropCards(var cards: [CardView], animation: Bool) {
         
         if let card = cards.first {
             if cards.count == 1 {
