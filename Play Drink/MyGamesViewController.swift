@@ -25,7 +25,7 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
     
     //support vars
     var c = 1
-    var coinsAvaliable: Int? = Int(375)
+    var coinsAvaliable: Int = Int(375)
     
     
     //alerts
@@ -34,7 +34,7 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
     
     
     override func viewWillAppear(animated: Bool) {
-         self.coinsAvaliableLabel.text = String(coinsAvaliableLabel)
+         self.coinsAvaliableLabel.text = String(self.coinsAvaliable)
     }
     
     override func viewDidLoad() {
