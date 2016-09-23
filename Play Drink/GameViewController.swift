@@ -19,16 +19,9 @@ enum cardModification {
 class GameViewController: UIViewController {
     
     var viewsAndRotations = [CardView : CGFloat]() // can remove cards from this
-    
-    
-
-    @IBOutlet var panGestureRecognizer: UIPanGestureRecognizer!
-    
     var cardViews = [CardView]() // don't remove cards from this.
     var cardInfos = [Card]() // don't remove the card data from this
-    
-    var cardModel : [Card]!
-    
+    var cardModel : [Card]? = []
     var animator : UIDynamicAnimator!
     var attachmentBehavior : UIAttachmentBehavior?
     var snapBehavior : UISnapBehavior!
@@ -37,13 +30,18 @@ class GameViewController: UIViewController {
     let cardCornerRadius = CGFloat(20)
     var didReturnFromTransition = false
     let mainQueue = dispatch_get_main_queue()
-//    let detailTransitionDelegate = DetailTransitionDelegate()
+    let detailTransitionDelegate = DetailTransitionDelegate()
     let progressIndicator = UIProgressView(progressViewStyle: UIProgressViewStyle.Bar)
     var topCardImage : UIImageView!
     var increment : Float!
     
+    //Mark: IBOutlets
+    
+    @IBOutlet var panGestureRecognizer: UIPanGestureRecognizer!
     @IBOutlet var undoButton: UIButton!
     @IBOutlet var resetButton: UIButton!
+    
+    //Mark: IBActions
     
     @IBAction func panDetected(sender: AnyObject) {
         if self.view.subviews.count < 5 || (self.view.subviews.last! is CardView == false) { // will change if more views are added to self.view
@@ -86,16 +84,17 @@ class GameViewController: UIViewController {
                         self.viewsAndRotations.removeValueForKey(card)
                         
                         if self.viewsAndRotations.count == 0 { //no more cards to show, so present option to restart
-                            
                             self.reset(self)
+                        }else {
+                            let newTopCard = self.view.subviews.last! as UIView
+                            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                                newTopCard.center = self.view.center
+                                self.undoButton.alpha = 1
+                            })
+                            self.snapBehavior = UISnapBehavior(item: newTopCard, snapToPoint: self.view.center)
+                            self.animator.addBehavior(self.snapBehavior)
                         }
-                        let newTopCard = self.view.subviews.last! as UIView
-                        UIView.animateWithDuration(0.3, animations: { () -> Void in
-                            newTopCard.center = self.view.center
-                            self.undoButton.alpha = 1
-                        })
-                        self.snapBehavior = UISnapBehavior(item: newTopCard, snapToPoint: self.view.center)
-                        self.animator.addBehavior(self.snapBehavior)
+                        
                 })
             }
         }
@@ -107,7 +106,7 @@ class GameViewController: UIViewController {
         UIView.animateWithDuration(0.2, animations: {
             self.resetButton.alpha = 0
         })
-        
+                
         for card in self.viewsAndRotations.keys {
             card.removeFromSuperview()
         }
@@ -146,12 +145,18 @@ class GameViewController: UIViewController {
             })
         }
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (self.cardModel?.isEmpty)! {
+            self.cardModel = CardStore.singleton.getCard()
+        }
+//        self.cardModel = CardStore.singleton.getCard()
         // Do any additional setup after loading the view, typically from a nib.
         self.cardFrame = CGRect(x: 50, y: 150, width: self.view.frame.width - 100, height: self.view.frame.height - 300)
         animator = UIDynamicAnimator(referenceView: view)
@@ -162,17 +167,18 @@ class GameViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         if didReturnFromTransition == false {
             
-            self.resetButton.userInteractionEnabled = false
-            cardViews = cards()
-            increment = Float(1.0) / Float(cardViews.count)
-            dropCards(cardViews, animation: true) // can't use dictonary keys because they dont have order
+            if self.view.subviews.count == 5 {
             
-            UIView.animateWithDuration(0.2, animations: { () -> Void in
-                self.resetButton.alpha = 0
-                self.undoButton.alpha = 0
-            })
-            
-            
+                self.resetButton.userInteractionEnabled = false
+                cardViews = cards()
+                increment = Float(1.0) / Float(cardViews.count)
+                dropCards(cardViews, animation: true) // can't use dictonary keys because they dont have order
+                
+                UIView.animateWithDuration(0.2, animations: { () -> Void in
+                    self.resetButton.alpha = 0
+                    self.undoButton.alpha = 0
+                })
+            }
         } else { //just returned from the transition
             
             let topCard = view.subviews[view.subviews.count-2] as! CardView //since there is another uiimageview on top, get 2nd last subview
@@ -205,19 +211,59 @@ class GameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    // MARK: - Segues
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    func NextVC() {
         
-        idCardLabel.text = String(c.id)
-        cardNameLabel.text = String(c.title)
-        imgCard.image = c.image
-        descriptionLabel.text = c.description
-        cardView.addSubview(idCardLabel)
-        cardView.addSubview(cardNameLabel)
-        cardView.addSubview(imgCard)
-        cardView.addSubview(descriptionLabel)
+//        if cardIsDropping { return }
+//        if let card = view.subviews.last as? CardView{
+//            
+//            let cInfo = cardInfos[self.view.subviews.count-6]
+//            
+//            // setup a uiimageview to animate instead of the one on the card
+//            topCardImage = UIImageView(image: cInfo.image)
+//            topCardImage.frame = card.image.frame
+//            topCardImage.frame.origin = card.frame.origin
+//            topCardImage.layer.cornerRadius = card.image.layer.cornerRadius
+//            topCardImage.layer.masksToBounds = true
+//            self.view.insertSubview(topCardImage, aboveSubview: card)
+//            
+//            
+//            let detailVC  = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("DetailCard") as! DetailCardViewController
+//            
+//            //allows for a special version of the detail vc to come in
+////            if let requestedStoryboard = cInfo.specialStoryboard {
+////                detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier(requestedStoryboard) as! DetailCardViewController
+////            }
+//            
+//            self.cardFrame = card.frame //important: used to set card back to original, autolayed frame.
+//            
+//            UIView.animateWithDuration(0.05, animations: { () -> Void in
+//                card.label.alpha = 0
+//                card.image.alpha = 0 // just so some images won't been seen below topCardImage during scale animations
+//                }, completion: { (finished) -> Void in
+//                    UIView.animateWithDuration(0.3, animations: { () -> Void in
+//                        self.topCardImage.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.width * (2.0/3.0))
+//                        card.frame = self.view.frame
+//                        card.layer.shadowOpacity = 0
+//                        }, completion: { (f) -> Void in
+//                            UIView.animateWithDuration(0.1, animations: { () -> Void in
+//                                card.layer.cornerRadius = 0
+//                                }, completion: { (fin) -> Void in
+//                                    detailVC.transitioningDelegate = self.detailTransitionDelegate
+//                                    detailVC.modalPresentationStyle = UIModalPresentationStyle.Custom
+//                                    detailVC.titleTxt = cInfo.title
+//                                    detailVC.descriptionTxt = cInfo.descriptionn
+//                                    detailVC.image = cInfo.image
+//                                    self.presentViewController(detailVC, animated: true, completion: nil)
+//                            })
+//                    })
+//            })
+//        }
+        performSegueWithIdentifier("detailCard", sender: nil)
+    }
+    
+    // MARK: - Card
+    
+    func dropCards(var cards: [CardView], animation: Bool) {
         
         if let card = cards.first {
             if cards.count == 1 {
@@ -229,6 +275,8 @@ class GameViewController: UIViewController {
                 card.label.text = "Good Luck"
             }
             
+            let tap = UITapGestureRecognizer(target: self, action: #selector(GameViewController.NextVC))
+            card.addGestureRecognizer(tap)
             self.view.addSubview(card)
             
             //add autolayout
@@ -270,7 +318,7 @@ class GameViewController: UIViewController {
     
     func cards() -> [CardView] {
         var cardsArray = [CardView]()
-        self.cardInfos = self.cardModel.suffle()
+        self.cardInfos = self.cardModel!.suffle()
         for i in 0 ..< self.cardInfos.count {
             let card = self.generateCard(self.cardInfos[i])
             cardsArray.append(card)
@@ -300,5 +348,17 @@ class GameViewController: UIViewController {
         let Vconstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|-offset-[card]-offset-|", options: NSLayoutFormatOptions(), metrics: ["offset": self.view.frame.height/7], views: ["card" : card])
         let Hconstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-offset-[card]-offset-|", options: NSLayoutFormatOptions(), metrics: ["offset": self.view.frame.width/10], views: ["card" : card])
         self.view.addConstraints(Vconstraints + Hconstraints)
+    }
+    
+    //Mark: Sege
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "detailCard" {
+            let nextVC = segue.destinationViewController as! DetailCardViewController
+            let cInfo = cardInfos[self.view.subviews.count-6]
+            nextVC.titleTxt = cInfo.title
+            nextVC.descriptionTxt = cInfo.descriptionn
+            nextVC.image = cInfo.image
+        }
     }
 }

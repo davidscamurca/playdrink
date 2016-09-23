@@ -112,7 +112,7 @@ class CardStore {
             
             card.id = dataCard.0
             card.title = dataCard.1
-            card.description = dataCard.2
+            card.descriptionn = dataCard.2
             card.image = dataCard.3
             card.bg_front = dataCard.4
         

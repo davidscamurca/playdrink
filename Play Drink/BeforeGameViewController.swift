@@ -10,17 +10,19 @@ import UIKit
 
 class BeforeGameViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
     
+    var allCards = CardStore.singleton.getCard()
+    var selectedCards : [Card]? = []
+    var numCards = 6
+    let collectionViewAIdentifier = "cellA"
+    let collectionViewBIdentifier = "cellB"
+    
+    //Mark: IBOutlets
+    
     @IBOutlet var allCardsTV: UICollectionView!
     @IBOutlet var selectedCardsTV: UICollectionView!
     @IBOutlet var buttonTop: UIBarButtonItem!
     @IBOutlet var numCardsLabel: UILabel!
-    var allCards = CardStore.singleton.getCard()
-    var selectedCards : [Card]? = []
-    var numCards = 6
     
-    
-    let collectionViewAIdentifier = "cellA"
-    let collectionViewBIdentifier = "cellB"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +62,6 @@ class BeforeGameViewController: UIViewController, UICollectionViewDataSource, UI
             let cellB = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CardsCollectionViewCell
             
             cellB.title.text = self.selectedCards![indexPath.row].title
-            
             return cellB
         }
     }
@@ -154,7 +155,7 @@ class BeforeGameViewController: UIViewController, UICollectionViewDataSource, UI
         }
     }
     
-    //Mark: Func's
+    //Mark: Segue
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
@@ -165,7 +166,7 @@ class BeforeGameViewController: UIViewController, UICollectionViewDataSource, UI
             var i = 0
             
             
-            while fourTimesSelectedCards.count != 12 {
+            while fourTimesSelectedCards.count != 11 {
                 
                 let card = i % selectedCards!.count
                 i += 1

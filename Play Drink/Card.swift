@@ -9,14 +9,49 @@
 
 import UIKit
 
-class Card {
+class Card: NSObject, NSCoding {
     
     
     var id: Int!
     var title: String!
-    var description: String!
+    var descriptionn: String!
     var image: UIImage!
     var bg_front: UIImage!
     
+    override init() {}
+    
+    required init(coder aDecoder: NSCoder){
+        
+        if let id = aDecoder.decodeObjectForKey("id") as? Int,
+            let title = aDecoder.decodeObjectForKey("title") as? String,
+            let descriptionn = aDecoder.decodeObjectForKey("descriptionn") as? String,
+            let image = aDecoder.decodeObjectForKey("image") as? UIImage,
+            let bg_front = aDecoder.decodeObjectForKey("bgfront") as? UIImage {
+            
+            self.id = id
+            self.title = title
+            self.descriptionn = descriptionn
+            self.image = image
+            self.bg_front = bg_front
+        }
+        
+        
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        
+        if let id = self.id,
+            let title = self.title,
+            let descriptionn = self.descriptionn,
+            let image = self.image,
+            let bg_front = self.bg_front {
+            
+            aCoder.encodeObject(id, forKey: "id")
+            aCoder.encodeObject(title, forKey: "title")
+            aCoder.encodeObject(descriptionn, forKey: "descriptionn")
+            aCoder.encodeObject(image, forKey: "image")
+            aCoder.encodeObject(bg_front, forKey: "bgfront")
+        }
+    }
     
 }
