@@ -33,8 +33,20 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
     //background image
     var viewBackground = UIImageView(image: UIImage(named: "background"))
     
+    
+    
+    //Mark: statusbar style
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.hidden = true //hiden  navigation bar
         
         self.view.addSubview(viewBackground)
         self.view.sendSubviewToBack(viewBackground)
@@ -147,6 +159,7 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
         }
             
     }
+    
     
     
 }
