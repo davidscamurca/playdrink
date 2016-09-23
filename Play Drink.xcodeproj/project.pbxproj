@@ -32,6 +32,10 @@
 		AD83D0971D90780500A65AE4 /* MyGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD83D0961D90780500A65AE4 /* MyGamesViewController.swift */; };
 		AD83D0991D90797100A65AE4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD83D0981D90797100A65AE4 /* TableViewCell.swift */; };
 		ADB5A3081D91DBCC001C19CF /* MyFriendsControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB5A3071D91DBCC001C19CF /* MyFriendsControllerView.swift */; };
+		ADDCFE001D95B34000C5D799 /* PreGameSuecaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDCFDFF1D95B34000C5D799 /* PreGameSuecaViewController.swift */; };
+		ADDCFE021D95B48900C5D799 /* RulesSuecaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDCFE011D95B48900C5D799 /* RulesSuecaViewController.swift */; };
+		ADDCFE041D95B60200C5D799 /* CreateSuecaDeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDCFE031D95B60200C5D799 /* CreateSuecaDeckViewController.swift */; };
+		ADDCFE061D95B6D100C5D799 /* MoreDeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDCFE051D95B6D100C5D799 /* MoreDeckViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +88,10 @@
 		AD83D0961D90780500A65AE4 /* MyGamesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGamesViewController.swift; sourceTree = "<group>"; };
 		AD83D0981D90797100A65AE4 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		ADB5A3071D91DBCC001C19CF /* MyFriendsControllerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFriendsControllerView.swift; sourceTree = "<group>"; };
+		ADDCFDFF1D95B34000C5D799 /* PreGameSuecaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreGameSuecaViewController.swift; sourceTree = "<group>"; };
+		ADDCFE011D95B48900C5D799 /* RulesSuecaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesSuecaViewController.swift; sourceTree = "<group>"; };
+		ADDCFE031D95B60200C5D799 /* CreateSuecaDeckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSuecaDeckViewController.swift; sourceTree = "<group>"; };
+		ADDCFE051D95B6D100C5D799 /* MoreDeckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreDeckViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +224,10 @@
 				AD83D0961D90780500A65AE4 /* MyGamesViewController.swift */,
 				AD83D0981D90797100A65AE4 /* TableViewCell.swift */,
 				ADB5A3071D91DBCC001C19CF /* MyFriendsControllerView.swift */,
+				ADDCFDFF1D95B34000C5D799 /* PreGameSuecaViewController.swift */,
+				ADDCFE011D95B48900C5D799 /* RulesSuecaViewController.swift */,
+				ADDCFE031D95B60200C5D799 /* CreateSuecaDeckViewController.swift */,
+				ADDCFE051D95B6D100C5D799 /* MoreDeckViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -366,14 +378,18 @@
 				39BAD9AC1D8358E800B2524B /* ViewController.swift in Sources */,
 				A0A474CD1D887CFC004B8DA8 /* BeforeGameViewController.swift in Sources */,
 				AD83D0971D90780500A65AE4 /* MyGamesViewController.swift in Sources */,
+				ADDCFE021D95B48900C5D799 /* RulesSuecaViewController.swift in Sources */,
 				AD29D1701D91B82A0087206D /* Game.swift in Sources */,
+				ADDCFE061D95B6D100C5D799 /* MoreDeckViewController.swift in Sources */,
 				A0A474CF1D887E49004B8DA8 /* CardsViewController.swift in Sources */,
+				ADDCFE001D95B34000C5D799 /* PreGameSuecaViewController.swift in Sources */,
 				AD29D1721D91B8680087206D /* GameStore.swift in Sources */,
 				AD29D1761D91DADE0087206D /* PlayerStore.swift in Sources */,
 				A0A474CB1D875A6E004B8DA8 /* MenuViewController.swift in Sources */,
 				A0A474D11D889424004B8DA8 /* GameViewController.swift in Sources */,
 				A09E0BC31D8B2A2B0082B435 /* CardsCollectionViewCell.swift in Sources */,
 				AD243EBA1D87591F00516E54 /* Card.swift in Sources */,
+				ADDCFE041D95B60200C5D799 /* CreateSuecaDeckViewController.swift in Sources */,
 				39BAD9AA1D8358E800B2524B /* AppDelegate.swift in Sources */,
 				ADB5A3081D91DBCC001C19CF /* MyFriendsControllerView.swift in Sources */,
 				AD83D0991D90797100A65AE4 /* TableViewCell.swift in Sources */,

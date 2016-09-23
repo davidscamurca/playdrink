@@ -108,6 +108,18 @@ class MyFriendsControllerView: UIViewController, UICollectionViewDataSource, UIC
         
         
     }
+    
+    
+    //Mark: IBActions
+    
+    @IBAction func backButton(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+
+    }
+    
+    
+    
+    
 
 }
 
