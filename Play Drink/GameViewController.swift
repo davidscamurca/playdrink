@@ -16,7 +16,7 @@ enum cardModification {
     case finished
 }
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
     var viewsAndRotations = [CardView : CGFloat]() // can remove cards from this
     var cardViews = [CardView]() // don't remove cards from this.
@@ -30,7 +30,6 @@ class GameViewController: UIViewController {
     let cardCornerRadius = CGFloat(20)
     var didReturnFromTransition = false
     let mainQueue = dispatch_get_main_queue()
-    let detailTransitionDelegate = DetailTransitionDelegate()
     let progressIndicator = UIProgressView(progressViewStyle: UIProgressViewStyle.Bar)
     var topCardImage : UIImageView!
     var increment : Float!
@@ -81,6 +80,8 @@ class GameViewController: UIViewController {
                         self.animator.removeAllBehaviors()
                         let newProgress = Float(1.0) / Float(self.cardViews.count) + self.progressIndicator.progress
                         self.progressIndicator.setProgress(newProgress, animated: true)
+                        self.progressIndicator.tintColor = UIColor.whiteColor()
+//                        self.progressIndicator.backgroundColor = UIColor.whiteColor()
                         self.viewsAndRotations.removeValueForKey(card)
                         
                         if self.viewsAndRotations.count == 0 { //no more cards to show, so present option to restart
@@ -98,6 +99,10 @@ class GameViewController: UIViewController {
                 })
             }
         }
+    }
+    
+    @IBAction func goBack() {
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     @IBAction func reset(sender: AnyObject) {
@@ -134,7 +139,7 @@ class GameViewController: UIViewController {
             card.alpha = 0.8
         })
         progressIndicator.setProgress(progressIndicator.progress - self.increment, animated: true)
-        self.progressIndicator.tintColor = card.backgroundColor
+        self.progressIndicator.tintColor = UIColor.whiteColor()
         dropCards([card], animation: false)
         
         
@@ -153,11 +158,10 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.delegate = self
         if (self.cardModel?.isEmpty)! {
             self.cardModel = CardStore.singleton.getCard()
         }
-//        self.cardModel = CardStore.singleton.getCard()
-        // Do any additional setup after loading the view, typically from a nib.
         self.cardFrame = CGRect(x: 50, y: 150, width: self.view.frame.width - 100, height: self.view.frame.height - 300)
         animator = UIDynamicAnimator(referenceView: view)
         progressIndicator.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: progressIndicator.frame.height + 20)
@@ -165,9 +169,10 @@ class GameViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        
         if didReturnFromTransition == false {
             
-            if self.view.subviews.count == 5 {
+            if self.view.subviews.count == 6 {
             
                 self.resetButton.userInteractionEnabled = false
                 cardViews = cards()
@@ -194,15 +199,8 @@ class GameViewController: UIViewController {
                 }, completion: { (fin) -> Void in
                     topCard.image.alpha = 1
                     self.topCardImage.removeFromSuperview() //remove image placed before animated transition
-                    UIView.animateWithDuration(0.2, animations: { () -> Void in
-                        topCard.label.alpha = 1
-                    })
             })
         }
-    }
-    
-    override func prefersStatusBarHidden() -> Bool {
-        return true
     }
     
     
@@ -212,53 +210,7 @@ class GameViewController: UIViewController {
     }
     
     func NextVC() {
-        
-//        if cardIsDropping { return }
-//        if let card = view.subviews.last as? CardView{
-//            
-//            let cInfo = cardInfos[self.view.subviews.count-6]
-//            
-//            // setup a uiimageview to animate instead of the one on the card
-//            topCardImage = UIImageView(image: cInfo.image)
-//            topCardImage.frame = card.image.frame
-//            topCardImage.frame.origin = card.frame.origin
-//            topCardImage.layer.cornerRadius = card.image.layer.cornerRadius
-//            topCardImage.layer.masksToBounds = true
-//            self.view.insertSubview(topCardImage, aboveSubview: card)
-//            
-//            
-//            let detailVC  = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("DetailCard") as! DetailCardViewController
-//            
-//            //allows for a special version of the detail vc to come in
-////            if let requestedStoryboard = cInfo.specialStoryboard {
-////                detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier(requestedStoryboard) as! DetailCardViewController
-////            }
-//            
-//            self.cardFrame = card.frame //important: used to set card back to original, autolayed frame.
-//            
-//            UIView.animateWithDuration(0.05, animations: { () -> Void in
-//                card.label.alpha = 0
-//                card.image.alpha = 0 // just so some images won't been seen below topCardImage during scale animations
-//                }, completion: { (finished) -> Void in
-//                    UIView.animateWithDuration(0.3, animations: { () -> Void in
-//                        self.topCardImage.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.width * (2.0/3.0))
-//                        card.frame = self.view.frame
-//                        card.layer.shadowOpacity = 0
-//                        }, completion: { (f) -> Void in
-//                            UIView.animateWithDuration(0.1, animations: { () -> Void in
-//                                card.layer.cornerRadius = 0
-//                                }, completion: { (fin) -> Void in
-//                                    detailVC.transitioningDelegate = self.detailTransitionDelegate
-//                                    detailVC.modalPresentationStyle = UIModalPresentationStyle.Custom
-//                                    detailVC.titleTxt = cInfo.title
-//                                    detailVC.descriptionTxt = cInfo.descriptionn
-//                                    detailVC.image = cInfo.image
-//                                    self.presentViewController(detailVC, animated: true, completion: nil)
-//                            })
-//                    })
-//            })
-//        }
-        performSegueWithIdentifier("detailCard", sender: nil)
+        self.performSegueWithIdentifier("detailCard", sender: nil)
     }
     
     // MARK: - Card
@@ -271,8 +223,7 @@ class GameViewController: UIViewController {
             }
             
             if animation {
-                card.image.image = UIImage(named: "bgf09")
-                card.label.text = "Good Luck"
+                card.image.image = UIImage(named: "cardBack")
             }
             
             let tap = UITapGestureRecognizer(target: self, action: #selector(GameViewController.NextVC))
@@ -303,7 +254,6 @@ class GameViewController: UIViewController {
                                 for cardf in self.view.subviews{
                                     if cardf is CardView{
                                         (cardf as! CardView).image.image = self.cardInfos[i].image
-                                        (cardf as! CardView).label.text = self.cardInfos[i].title
                                         i += 1
                                     }
                                 }
@@ -350,15 +300,42 @@ class GameViewController: UIViewController {
         self.view.addConstraints(Vconstraints + Hconstraints)
     }
     
-    //Mark: Sege
+    //Mark: Segue
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "detailCard" {
             let nextVC = segue.destinationViewController as! DetailCardViewController
-            let cInfo = cardInfos[self.view.subviews.count-6]
+            let cInfo = cardInfos[self.view.subviews.count - 7]
             nextVC.titleTxt = cInfo.title
             nextVC.descriptionTxt = cInfo.descriptionn
             nextVC.image = cInfo.image
+            print("w: \((self.view.subviews.last?.frame.height)! / self.view.frame.height)")
         }
+    }
+    
+    //Mark: Status Bar Delegate
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
+}
+extension GameViewController: UINavigationControllerDelegate {
+    
+    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        let animation = PopAnimator()
+        animation.origin = self.view.subviews.last!.center
+        animation.circleColor = UIColor.whiteColor()
+        
+        if fromVC is GameViewController && toVC is DetailCardViewController {
+            animation.transitionMode = .Present
+            return animation
+        } else if toVC is GameViewController{
+            animation.transitionMode = .Dismiss
+            return animation
+        }
+        
+        return nil
     }
 }

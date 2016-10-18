@@ -34,7 +34,7 @@ class DetailCardViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(DetailCardViewController.goBack))
         self.view.addGestureRecognizer(tap)
     }
-
+    
     func goBack() {
         
         UIView.animateWithDuration(0.2, animations: { () -> Void in
@@ -42,7 +42,7 @@ class DetailCardViewController: UIViewController {
             self.descripitions.alpha = 0
             self.imageView.alpha = 0
             }, completion: { (fin) -> Void in
-                self.dismissViewControllerAnimated(true, completion: nil)
+                self.navigationController?.popViewControllerAnimated(true)
         })
     }
     

@@ -15,19 +15,80 @@ class PlayerStore {
     
     
     let dataPlayers: [(
-                String, //name of player
-                UIImage //avatar of player
+        String, //name of player
+        String, //description of player
+        UIImage //avatar of player
     )] = [
         (
+            "Add",
+            "Friends",
+            UIImage(named:"mais01")!
+        ),
+        (
             "Anderson",
-            UIImage(named:"ubuntuLogo")!
+            "Suricate King",
+            UIImage(named:"avatar05")!
+        ),
+        (
+            "David",
+            "The Support",
+            UIImage(named:"avatar01")!
+        ),
+        (
+            "Edson",
+            "The Maniac",
+            UIImage(named:"avatar03")!
         ),
         (
             "Vicente",
-            UIImage(named: "ubuntuLogo")!
-        
+            "The Master",
+            UIImage(named: "avatar02")!
+        ),
+        (
+            "Arthur",
+            "The Hyper",
+            UIImage(named:"avatar01")!
+        ),
+        (
+            "Nayara",
+            "The Big",
+            UIImage(named:"avatar03")!
+        ),
+        (
+            "Antonio Jr",
+            "The Maniac",
+            UIImage(named:"avatar01")!
+        ),
+        (
+            "Maria",
+            "The Witch",
+            UIImage(named:"avatar03")!
+        ),
+        (
+            "Giovanne",
+            "The Support",
+            UIImage(named:"avatar01")!
+        ),
+        (
+            "Max",
+            "The Maniac",
+            UIImage(named:"avatar02")!
+        ),
+        (
+            "Guto",
+            "The Maniac",
+            UIImage(named:"avatar01")!
+        ),
+        (
+            "Villar",
+            "The Maniac",
+            UIImage(named:"avatar03")!
+        ),
+        (
+            "Thiago",
+            "The Brave",
+            UIImage(named: "avatar01")!
         )
-    
     ]
     
     
@@ -38,7 +99,8 @@ class PlayerStore {
         for p in dataPlayers{
             let player = Player()
             player.name = p.0
-            player.avatar = p.1
+            player.description = p.1
+            player.avatar = p.2
             
             players.append(player)
         }

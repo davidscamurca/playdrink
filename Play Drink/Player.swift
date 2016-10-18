@@ -12,5 +12,6 @@ import UIKit
 class Player{
     
     var name: String!
+    var description: String!
     var avatar: UIImage!
 }

@@ -19,7 +19,7 @@ class GameStore{
     
     )] = [
         (
-            "Sueca Drinking Game",
+            "Sueca Drink Game",
             UIImage(named: "iconSueca")!
         ),
         (
@@ -40,8 +40,8 @@ class GameStore{
         
         ),
         (
-            "Truth or Dare",
-            UIImage(named: "iconTruth")!
+            "More app's",
+            UIImage(named: "mais01")!
         )
     
     ] //close dataGames
@@ -62,9 +62,4 @@ class GameStore{
         return games
         
     }
-    
-    
-    
-    
-    
 }

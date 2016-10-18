@@ -16,7 +16,8 @@ class Card: NSObject, NSCoding {
     var title: String!
     var descriptionn: String!
     var image: UIImage!
-    var bg_front: UIImage!
+    var mImage: UIImage!
+    var pImage: UIImage!
     
     override init() {}
     
@@ -26,13 +27,15 @@ class Card: NSObject, NSCoding {
             let title = aDecoder.decodeObjectForKey("title") as? String,
             let descriptionn = aDecoder.decodeObjectForKey("descriptionn") as? String,
             let image = aDecoder.decodeObjectForKey("image") as? UIImage,
-            let bg_front = aDecoder.decodeObjectForKey("bgfront") as? UIImage {
+            let mImage = aDecoder.decodeObjectForKey("mImage") as? UIImage,
+            let pImage = aDecoder.decodeObjectForKey("pImage") as? UIImage {
             
             self.id = id
             self.title = title
             self.descriptionn = descriptionn
             self.image = image
-            self.bg_front = bg_front
+            self.mImage = mImage
+            self.pImage = pImage
         }
         
         
@@ -44,13 +47,16 @@ class Card: NSObject, NSCoding {
             let title = self.title,
             let descriptionn = self.descriptionn,
             let image = self.image,
-            let bg_front = self.bg_front {
+            let mImage = self.mImage,
+            let pImage = self.pImage
+        {
             
             aCoder.encodeObject(id, forKey: "id")
             aCoder.encodeObject(title, forKey: "title")
             aCoder.encodeObject(descriptionn, forKey: "descriptionn")
             aCoder.encodeObject(image, forKey: "image")
-            aCoder.encodeObject(bg_front, forKey: "bgfront")
+            aCoder.encodeObject(mImage, forKey: "mImage")
+            aCoder.encodeObject(pImage, forKey: "pImage")
         }
     }
     

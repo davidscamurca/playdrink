@@ -46,7 +46,7 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.hidden = true //hiden  navigation bar
+        self.navigationController?.navigationBar.hidden = false //hiden  navigation bar
         
         self.view.addSubview(viewBackground)
         self.view.sendSubviewToBack(viewBackground)
@@ -151,16 +151,13 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
                 
                 
                 self.presentViewController(alertController!, animated: true, completion: nil)
-               
-                
             }
-            
-            
         }
-            
     }
     
-    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
     
 }
 

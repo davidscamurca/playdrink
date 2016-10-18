@@ -11,10 +11,9 @@ import UIKit
 class CardView: UIView {
     
     @IBOutlet var image: UIImageView!
-    @IBOutlet var label: UILabel!
     
     func setup(data : Card, cornerRad : CGFloat, target : AnyObject) {
-        self.label.text = data.title
+        
         self.image.image = data.image
         self.image.layer.cornerRadius = cornerRad
         self.image.contentMode = UIViewContentMode.ScaleAspectFill
