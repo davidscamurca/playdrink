@@ -23,12 +23,12 @@ class Card: NSObject, NSCoding {
     
     required init(coder aDecoder: NSCoder){
         
-        if let id = aDecoder.decodeObjectForKey("id") as? Int,
-            let title = aDecoder.decodeObjectForKey("title") as? String,
-            let descriptionn = aDecoder.decodeObjectForKey("descriptionn") as? String,
-            let image = aDecoder.decodeObjectForKey("image") as? UIImage,
-            let mImage = aDecoder.decodeObjectForKey("mImage") as? UIImage,
-            let pImage = aDecoder.decodeObjectForKey("pImage") as? UIImage {
+        if let id = aDecoder.decodeObject(forKey: "id") as? Int,
+            let title = aDecoder.decodeObject(forKey: "title") as? String,
+            let descriptionn = aDecoder.decodeObject(forKey: "descriptionn") as? String,
+            let image = aDecoder.decodeObject(forKey: "image") as? UIImage,
+            let mImage = aDecoder.decodeObject(forKey: "mImage") as? UIImage,
+            let pImage = aDecoder.decodeObject(forKey: "pImage") as? UIImage {
             
             self.id = id
             self.title = title
@@ -41,7 +41,7 @@ class Card: NSObject, NSCoding {
         
     }
     
-    func encodeWithCoder(aCoder: NSCoder) {
+    func encode(with aCoder: NSCoder) {
         
         if let id = self.id,
             let title = self.title,
@@ -51,12 +51,12 @@ class Card: NSObject, NSCoding {
             let pImage = self.pImage
         {
             
-            aCoder.encodeObject(id, forKey: "id")
-            aCoder.encodeObject(title, forKey: "title")
-            aCoder.encodeObject(descriptionn, forKey: "descriptionn")
-            aCoder.encodeObject(image, forKey: "image")
-            aCoder.encodeObject(mImage, forKey: "mImage")
-            aCoder.encodeObject(pImage, forKey: "pImage")
+            aCoder.encode(id, forKey: "id")
+            aCoder.encode(title, forKey: "title")
+            aCoder.encode(descriptionn, forKey: "descriptionn")
+            aCoder.encode(image, forKey: "image")
+            aCoder.encode(mImage, forKey: "mImage")
+            aCoder.encode(pImage, forKey: "pImage")
         }
     }
     

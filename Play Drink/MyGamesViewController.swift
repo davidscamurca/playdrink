@@ -37,8 +37,8 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
     
     //Mark: statusbar style
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
 
     
@@ -46,10 +46,10 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.hidden = false //hiden  navigation bar
+        self.navigationController?.navigationBar.isHidden = false //hiden  navigation bar
         
         self.view.addSubview(viewBackground)
-        self.view.sendSubviewToBack(viewBackground)
+        self.view.sendSubview(toBack: viewBackground)
         
         
         self.MyGamesCV.delegate = self
@@ -75,7 +75,7 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
     
     //Mark: UICollectionView
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.MyGamesCV{
             if !self.myGames!.isEmpty{
                 return self.myGames!.count
@@ -90,9 +90,9 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.MyGamesCV {
-            let myGamesCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! MyCollectionViewCell
+            let myGamesCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MyCollectionViewCell
             
             myGamesCell.cellImage.image = self.myGames![indexPath.row].gameIcon
             myGamesCell.cellLabel.text = self.myGames![indexPath.row].gameName
@@ -101,7 +101,7 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
             
             
         }else {
-            let storeGamesCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as!
+            let storeGamesCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as!
                 MyCollectionViewCell
             
             storeGamesCell.cellImage.image = store![indexPath.row].gameIcon
@@ -113,7 +113,7 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         
         if collectionView == self.StoreGamesCV {
@@ -123,26 +123,26 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
             }else {
                 
                 //alert to buy a game
-                self.alertController = UIAlertController(title: "Buy Game", message: "Do you wish buy this game?", preferredStyle: .Alert)
+                self.alertController = UIAlertController(title: "Buy Game", message: "Do you wish buy this game?", preferredStyle: .alert)
                 
                 //creating buttons to alert
-                let buyButton = UIAlertAction(title: "Buy", style: .Default){
+                let buyButton = UIAlertAction(title: "Buy", style: .default){
                     UIAlertAction in
                     print("Game sold!")
                     let game = self.store![indexPath.item]
-                    self.myGames?.insert(game, atIndex: 1)
+                    self.myGames?.insert(game, at: 1)
                     self.MyGamesCV.reloadData()
                     
-                    self.store?.removeAtIndex(indexPath.row)
-                    self.StoreGamesCV.deleteItemsAtIndexPaths([indexPath])
+                    self.store?.remove(at: indexPath.row)
+                    self.StoreGamesCV.deleteItems(at: [indexPath])
                     self.StoreGamesCV.reloadData()
                     
                 }
                 
                 //button to cancel operation
-                let cancelButton = UIAlertAction(title: "Cancel", style: .Default){
+                let cancelButton = UIAlertAction(title: "Cancel", style: .default){
                     UIAlertAction in
-                    self.alertController?.dismissViewControllerAnimated(true, completion: nil)
+                    self.alertController?.dismiss(animated: true, completion: nil)
                 }
                 
                 //add buttons in alertController
@@ -150,12 +150,12 @@ class MyGamesViewController: UIViewController, UICollectionViewDataSource, UICol
                 self.alertController?.addAction(cancelButton)
                 
                 
-                self.presentViewController(alertController!, animated: true, completion: nil)
+                self.present(alertController!, animated: true, completion: nil)
             }
         }
     }
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
     

@@ -39,7 +39,7 @@ class CardStore {
             (   300,
                 "Espelho",
                 "Escolha alguém para beber com você.",
-                UIImage(named: "espelho")!,
+                UIImage(named: "mEspelho")!, //problema com asset - Espelho
                 UIImage(named: "mEspelho")!,
                 UIImage(named: "pEspelho")!
             ),
@@ -56,7 +56,7 @@ class CardStore {
                 "Memória",
                 "Fale um palavra qualquer. O próximo tem que repetir a palavra anterior e adicionar outra começando com a útima letra da palavra anterior. Se errar ou não souber deve beber.",
                 UIImage(named: "queReiSouEu")!,
-                UIImage(named: "mQueReiSouEu")!,
+                UIImage(named: "queReiSouEu")!, //problema com asset - mQueReiSouEu
                 UIImage(named: "pQueReiSouEu")!
             ),
             
@@ -71,7 +71,7 @@ class CardStore {
             (   700,
                 "Pi",
                 "Fale o número 1, o próximo jogador fala 2 e assim por diante. So que deve ser substituído por Pi todos os múltiplos de três.",
-                UIImage(named: "pi")!,
+                UIImage(named: "mPi")!, //problema com asset - pi
                 UIImage(named: "mPi")!,
                 UIImage(named: "pPi")!
             ),

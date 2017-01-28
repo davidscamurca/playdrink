@@ -28,12 +28,12 @@ class MyFriendsControllerView: UIViewController, UICollectionViewDataSource, UIC
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.allPlayersReverse = self.allPlayers.reverse()
+        self.allPlayersReverse = self.allPlayers.reversed()
         
         for _ in 0...3 {
             let player = self.allPlayersReverse[self.allPlayersReverse.count-2]
-            self.selecteds?.insert(player, atIndex: 0)
-            self.allPlayersReverse.removeAtIndex(self.allPlayersReverse.count-2)
+            self.selecteds?.insert(player, at: 0)
+            self.allPlayersReverse.remove(at: self.allPlayersReverse.count-2)
         }
         
         self.selectedCollectionView.delegate = self
@@ -45,7 +45,7 @@ class MyFriendsControllerView: UIViewController, UICollectionViewDataSource, UIC
     
     //Mark: Collectionview Data Source
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.toPlayCollectionView {
             if !self.allPlayersReverse.isEmpty {
                 return self.allPlayersReverse.count // Replace with count of your data for collectionViewA
@@ -60,9 +60,9 @@ class MyFriendsControllerView: UIViewController, UICollectionViewDataSource, UIC
     }
     
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.toPlayCollectionView{
-            let cellA = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! MyCollectionViewCell
+            let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MyCollectionViewCell
             
             cellA.cellLabel.text = self.allPlayersReverse[indexPath.row].name
             cellA.cellLabel2.text = self.allPlayersReverse[indexPath.row].description
@@ -71,7 +71,7 @@ class MyFriendsControllerView: UIViewController, UICollectionViewDataSource, UIC
         }
         
         else {
-            let cellB = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! MyCollectionViewCell
+            let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MyCollectionViewCell
             
             cellB.cellLabel.text = self.selecteds![indexPath.row].name
             cellB.cellLabel2.text = self.selecteds![indexPath.row].description
@@ -80,26 +80,26 @@ class MyFriendsControllerView: UIViewController, UICollectionViewDataSource, UIC
         }
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if collectionView == self.toPlayCollectionView {
             
             let player = self.allPlayersReverse[indexPath.item]
-            self.selecteds?.insert(player, atIndex: 0)
+            self.selecteds?.insert(player, at: 0)
             self.selectedCollectionView.reloadData()
             
-            self.allPlayersReverse.removeAtIndex(indexPath.item)
-            self.toPlayCollectionView.deleteItemsAtIndexPaths([indexPath])
+            self.allPlayersReverse.remove(at: indexPath.item)
+            self.toPlayCollectionView.deleteItems(at: [indexPath])
             self.toPlayCollectionView.reloadData()
             
         }else{
             
             let player = self.selecteds![indexPath.item]
-            self.allPlayersReverse.insert(player, atIndex: 0)
+            self.allPlayersReverse.insert(player, at: 0)
             self.toPlayCollectionView.reloadData()
             
-            self.selecteds?.removeAtIndex(indexPath.item)
-            self.selectedCollectionView.deleteItemsAtIndexPaths([indexPath])
+            self.selecteds?.remove(at: indexPath.item)
+            self.selectedCollectionView.deleteItems(at: [indexPath])
             self.selectedCollectionView.reloadData()
         }
         
@@ -109,14 +109,14 @@ class MyFriendsControllerView: UIViewController, UICollectionViewDataSource, UIC
     
     //Mark: IBActions
     
-    @IBAction func backButton(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+    @IBAction func backButton(_ sender: AnyObject) {
+        self.navigationController?.popViewController(animated: true)
 
     }
     
     //Mark: Status Bar Delegate
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
     

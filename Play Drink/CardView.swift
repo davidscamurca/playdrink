@@ -12,21 +12,21 @@ class CardView: UIView {
     
     @IBOutlet var image: UIImageView!
     
-    func setup(data : Card, cornerRad : CGFloat, target : AnyObject) {
+    func setup(_ data : Card, cornerRad : CGFloat, target : AnyObject) {
         
         self.image.image = data.image
         self.image.layer.cornerRadius = cornerRad
-        self.image.contentMode = UIViewContentMode.ScaleAspectFill
+        self.image.contentMode = UIViewContentMode.scaleAspectFill
         self.image.clipsToBounds = true
         
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.layer.shadowColor = UIColor.blackColor().CGColor
+        self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOpacity = 0.4
         self.layer.shadowOffset = CGSize(width: 3.0, height: 4.0)
         self.layer.drawsAsynchronously = true
         //        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: cornerRad).CGPath
-        UIView.animateWithDuration(0.01, animations: { () -> Void in
-            self.transform = CGAffineTransformMakeScale(1.35, 1.35)
+        UIView.animate(withDuration: 0.01, animations: { () -> Void in
+            self.transform = CGAffineTransform(scaleX: 1.35, y: 1.35)
             self.alpha = 0.7
         })
         self.layer.cornerRadius = cornerRad

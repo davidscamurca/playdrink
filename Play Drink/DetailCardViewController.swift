@@ -37,12 +37,12 @@ class DetailCardViewController: UIViewController {
     
     func goBack() {
         
-        UIView.animateWithDuration(0.2, animations: { () -> Void in
+        UIView.animate(withDuration: 0.2, animations: { () -> Void in
             self.titles.alpha = 0
             self.descripitions.alpha = 0
             self.imageView.alpha = 0
             }, completion: { (fin) -> Void in
-                self.navigationController?.popViewControllerAnimated(true)
+                self.navigationController?.popViewController(animated: true)
         })
     }
     

@@ -19,8 +19,8 @@ class RulesSuecaViewController: UIViewController {
     
     
     
-    @IBAction func backButton(sender: AnyObject) {
-          self.navigationController?.popViewControllerAnimated(true)
+    @IBAction func backButton(_ sender: AnyObject) {
+          self.navigationController?.popViewController(animated: true)
         
     }
     

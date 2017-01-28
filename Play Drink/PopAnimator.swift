@@ -12,63 +12,63 @@ class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     
     enum PopTransitionMode: Int {
-        case Present, Dismiss
+        case present, dismiss
     }
     
     var circle : UIView?
     var circleColor : UIColor?
-    var origin = CGPointZero
+    var origin = CGPoint.zero
     
-    var transitionMode: PopTransitionMode = .Present
+    var transitionMode: PopTransitionMode = .present
     
     let presentDuration = 0.3
     let dismissDuration = 0.1
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         
-        if self.transitionMode == .Present {
+        if self.transitionMode == .present {
             return self.presentDuration
         }else {
             return self.dismissDuration
         }
     }
     
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     
-        let containerView = transitionContext.containerView()
-        let presentView = transitionContext.viewForKey(UITransitionContextToViewKey)!
-        let returnView = transitionContext.viewForKey(UITransitionContextFromViewKey)!
+        let containerView = transitionContext.containerView
+        let presentView = transitionContext.view(forKey: UITransitionContextViewKey.to)!
+        let returnView = transitionContext.view(forKey: UITransitionContextViewKey.from)!
         
-        if self.transitionMode == .Present {
+        if self.transitionMode == .present {
             
             presentView.center = origin
-            presentView.transform = CGAffineTransformMakeScale(0.8, 0.7)
+            presentView.transform = CGAffineTransform(scaleX: 0.8, y: 0.7)
             presentView.layer.cornerRadius = 20
             presentView.backgroundColor = circleColor
-            containerView?.addSubview(presentView)
+            containerView.addSubview(presentView)
             
-            UIView.animateWithDuration(presentDuration, animations: {
+            UIView.animate(withDuration: presentDuration, animations: {
                 
-                presentView.transform = CGAffineTransformMakeScale(1.0, 1.0)
-                }) { (_) in
+                presentView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                }, completion: { (_) in
                     presentView.layer.cornerRadius = 0
                     transitionContext.completeTransition(true)
-            }
+            }) 
         }else {
             
-            containerView?.addSubview(presentView)
-            containerView?.addSubview(returnView)
+            containerView.addSubview(presentView)
+            containerView.addSubview(returnView)
             returnView.layer.cornerRadius = 20
 
-            UIView.animateWithDuration(dismissDuration, animations: {
+            UIView.animate(withDuration: dismissDuration, animations: {
                 
-                returnView.transform = CGAffineTransformMakeScale(0.8, 0.7)
+                returnView.transform = CGAffineTransform(scaleX: 0.8, y: 0.7)
                 returnView.center = self.origin
 
-                }) { (_) in
+                }, completion: { (_) in
                     returnView.removeFromSuperview()
                     transitionContext.completeTransition(true)
-            }
+            }) 
         }
     }
 }

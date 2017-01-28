@@ -313,6 +313,7 @@
 					39BAD9A51D8358E800B2524B = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 2577FS5BXM;
+						LastSwiftMigration = 0810;
 					};
 					39BAD9B91D8358E800B2524B = {
 						CreatedOnToolsVersion = 7.3;
@@ -550,6 +551,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "davidcamurca.Play-Drink";
 				PRODUCT_NAME = Valhalla;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -565,6 +567,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "davidcamurca.Play-Drink";
 				PRODUCT_NAME = Valhalla;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

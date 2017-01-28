@@ -7,6 +7,30 @@
 //
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 class BeforeGameViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
     
@@ -25,27 +49,27 @@ class BeforeGameViewController: UIViewController, UICollectionViewDataSource, UI
     
     //Mark: IBActions
     
-    @IBAction func playGame(sender: UIButton) {
+    @IBAction func playGame(_ sender: UIButton) {
         print(self.selectedCards?.count)
         if self.selectedCards?.count > 5 {
-            performSegueWithIdentifier("playGame", sender: nil)
+            performSegue(withIdentifier: "playGame", sender: nil)
         }else {
             self.numCardsLabel.frame.origin.x = 30
-            UIView.animateWithDuration(0.7, delay: 0, usingSpringWithDamping: 0.1, initialSpringVelocity: 5, options: .CurveEaseOut, animations: {
+            UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.1, initialSpringVelocity: 5, options: .curveEaseOut, animations: {
                 self.numCardsLabel.frame.origin.x = 0
                 }, completion: nil)
         }
     }
     
-    @IBAction func selectOrDeselect(sender: UIBarButtonItem) {
+    @IBAction func selectOrDeselect(_ sender: UIBarButtonItem) {
         
         if sender.title == "Select All" {
             
             while !self.allCards.isEmpty {
                 var i = 0
                 let card = self.allCards[i]
-                self.selectedCards?.insert(card, atIndex: 0)
-                self.allCards.removeAtIndex(i)
+                self.selectedCards?.insert(card, at: 0)
+                self.allCards.remove(at: i)
                 i += 1
                 self.selectedCardsTV.reloadData()
                 self.allCardsTV.reloadData()
@@ -58,8 +82,8 @@ class BeforeGameViewController: UIViewController, UICollectionViewDataSource, UI
             while !(self.selectedCards?.isEmpty)! {
                 var i = 0
                 let card = self.selectedCards![i]
-                self.allCards.insert(card, atIndex: 0)
-                self.selectedCards!.removeAtIndex(i)
+                self.allCards.insert(card, at: 0)
+                self.selectedCards!.remove(at: i)
                 i += 1
                 self.selectedCardsTV.reloadData()
                 self.allCardsTV.reloadData()
@@ -71,7 +95,7 @@ class BeforeGameViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     @IBAction func goBack() {
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {
@@ -86,7 +110,7 @@ class BeforeGameViewController: UIViewController, UICollectionViewDataSource, UI
     
     //Mark: Collection View Data Source
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.allCardsTV {
             if !self.allCards.isEmpty {
                 return self.allCards.count // Replace with count of your data for collectionViewA
@@ -100,33 +124,33 @@ class BeforeGameViewController: UIViewController, UICollectionViewDataSource, UI
         return 0
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.allCardsTV {
-            let cellA = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CardsCollectionViewCell
+            let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CardsCollectionViewCell
             
             cellA.imageView.image = self.allCards[indexPath.row].mImage
             return cellA
         }
             
         else {
-            let cellB = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CardsCollectionViewCell
+            let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CardsCollectionViewCell
             
             cellB.imageView.image = self.selectedCards![indexPath.row].pImage
             return cellB
         }
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if collectionView == self.allCardsTV {
             
             let card = self.allCards[indexPath.item]
-            self.selectedCards?.insert(card, atIndex: 0)
+            self.selectedCards?.insert(card, at: 0)
             self.selectedCardsTV.reloadData()
             
             
-            self.allCards.removeAtIndex(indexPath.item)
-            self.allCardsTV.deleteItemsAtIndexPaths([indexPath])
+            self.allCards.remove(at: indexPath.item)
+            self.allCardsTV.deleteItems(at: [indexPath])
             self.allCardsTV.reloadData()
             
             if self.numCards > 0{
@@ -142,12 +166,12 @@ class BeforeGameViewController: UIViewController, UICollectionViewDataSource, UI
         }else {
             
             let card = self.selectedCards![indexPath.item]
-            self.allCards.insert(card, atIndex: 0)
+            self.allCards.insert(card, at: 0)
             self.allCardsTV.reloadData()
             
             
-            self.selectedCards?.removeAtIndex(indexPath.item)
-            self.selectedCardsTV.deleteItemsAtIndexPaths([indexPath])
+            self.selectedCards?.remove(at: indexPath.item)
+            self.selectedCardsTV.deleteItems(at: [indexPath])
             self.selectedCardsTV.reloadData()
             
             if self.selectedCards?.count < 6{
@@ -161,11 +185,11 @@ class BeforeGameViewController: UIViewController, UICollectionViewDataSource, UI
     
     //Mark: Segue
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "playGame" {
             
-            let nextVC = segue.destinationViewController as! GameViewController
+            let nextVC = segue.destination as! GameViewController
             var fourTimesSelectedCards : [Card]! = []
             var i = 0
             
@@ -182,7 +206,7 @@ class BeforeGameViewController: UIViewController, UICollectionViewDataSource, UI
     
     //Mark: Status Bar Delegate
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
     
