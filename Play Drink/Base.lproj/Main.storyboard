@@ -150,7 +150,6 @@
                                         <connections>
                                             <outlet property="cellImage" destination="KBo-01-RBn" id="pIk-br-44Z"/>
                                             <outlet property="cellLabel" destination="QoT-rS-4sp" id="u0r-bF-Huf"/>
-                                            <segue destination="RvG-72-hOE" kind="show" identifier="gotoGame" id="XRX-Vz-RGb"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -220,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t7W-AY-Al0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="884" y="2737"/>
+            <point key="canvasLocation" x="738" y="1548"/>
         </scene>
         <!--MyFriendsViewController-->
         <scene sceneID="VTV-OW-t2R">
@@ -394,9 +393,6 @@
                                     <constraint firstAttribute="height" constant="40" id="rTL-Pw-1SV"/>
                                 </constraints>
                                 <state key="normal" image="play"/>
-                                <connections>
-                                    <segue destination="yrF-ih-Ywi" kind="show" id="nzx-tB-BLX"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tituloParty" translatesAutoresizingMaskIntoConstraints="NO" id="vN5-aO-pYI">
                                 <rect key="frame" x="30" y="200" width="315" height="36"/>
@@ -579,7 +575,6 @@
                                             <outlet property="cellImage" destination="nwv-oy-PRm" id="ABj-QY-D8m"/>
                                             <outlet property="cellLabel" destination="heH-Ei-6Bv" id="idm-ZI-Dbk"/>
                                             <outlet property="cellLabel2" destination="cRc-yw-xpH" id="ToX-g1-Uol"/>
-                                            <segue destination="Qpk-pj-imP" kind="show" id="ksP-mJ-RTg"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -609,9 +604,6 @@
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iki-Qs-ZUz">
                                 <rect key="frame" x="96" y="570" width="182" height="35"/>
                                 <state key="normal" image="botaoRules"/>
-                                <connections>
-                                    <segue destination="Qec-7J-kNx" kind="show" id="H1g-73-P3Z"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dI6-Q9-2hM">
                                 <rect key="frame" x="96" y="527" width="182" height="35"/>
@@ -623,9 +615,6 @@
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnV-RE-dxd">
                                 <rect key="frame" x="96" y="613" width="182" height="34"/>
                                 <state key="normal" image="botaoMorecards"/>
-                                <connections>
-                                    <segue destination="5TS-Pj-jg3" kind="show" id="z6A-JJ-uqR"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sueca" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30U-ZP-MzO">
                                 <rect key="frame" x="156" y="225" width="63" height="24"/>
@@ -704,10 +693,11 @@
                             <constraint firstItem="kFi-fV-fEB" firstAttribute="centerX" secondItem="30U-ZP-MzO" secondAttribute="centerX" id="xT6-ak-lzH"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="6Ke-n1-NAs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qo4-5R-Lhe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1873" y="2696"/>
+            <point key="canvasLocation" x="1327" y="2656"/>
         </scene>
         <!--RulesSuecaViewController-->
         <scene sceneID="ANA-gh-4ym">
@@ -747,7 +737,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wYs-G0-Qai" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1417" y="3762"/>
+            <point key="canvasLocation" x="1306" y="3761"/>
         </scene>
         <!--CreateSuecaDeckViewController-->
         <scene sceneID="6vf-fX-QY3">
@@ -996,7 +986,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R2f-aq-9wK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2282" y="3723"/>
+            <point key="canvasLocation" x="2102" y="3745"/>
         </scene>
         <!--MoreDeckViewController-->
         <scene sceneID="OvD-CH-bD4">
@@ -1172,7 +1162,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="4yS-Od-d69" kind="relationship" relationship="rootViewController" id="Vgk-JA-oKG"/>
+                        <segue destination="RvG-72-hOE" kind="relationship" relationship="rootViewController" id="JWD-ex-2FR"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4aX-l4-lZv" userLabel="First Responder" sceneMemberID="firstResponder"/>
